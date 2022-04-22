@@ -1,0 +1,164 @@
+body{
+    margin: 0px;
+    background-image: linear-gradient(to bottom, #61CBED, #e4e5e6 80%);
+    font-family: sans-serif;
+    overflow-x: hidden;
+
+}
+
+
+header{
+    background-color: #61CBED;
+    display: flex;
+}
+
+.container{
+    width: 80vw;
+    display: flex;
+    margin: 0 auto;
+}
+
+header .container{
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img{
+    width: 20%;
+}
+
+.navbar{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.navbar li{
+    display: flex;
+}
+
+.navbar li a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    margin-right: 3vw;
+}
+
+.navbar li :hover{
+    color: blue;
+    font-size: 1.2em;
+    transition: 0.6s;
+}
+
+.navbar li :active{
+    color: rgb(255, 0, 0);
+    font-size: 1.1em;
+    transition: 0.2s;
+}
+
+
+.banner img{
+    width: 100vw;
+    height: 50vh;
+}
+
+main {
+    background-image: url(img-site/fundo-site-linhas-2.png);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+}
+
+footer{
+    background-color: black;
+    width: 100vw;
+    height: 45vh;
+    display: flex
+}
+
+.conteudo_footer{
+    color: white;
+    display: flex;
+    position: relative;
+}
+
+.conteudo_footer a{
+    font-style: italic;
+    font-size: 0.8em;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+.titulos_footer{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-bottom: 3%;
+}
+
+
+.fale_conosco{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5vh;
+    padding-left: 5vw;
+}
+
+.barra{
+    width: 12vw;
+    height: 0.5vh;
+    background-color: #61CBED;
+    align-self: center;
+    margin-bottom: 5%;
+}
+
+
+.sac{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5vh;
+    padding-left: 9vw;
+}
+
+
+.logo_footer{
+   position: absolute;
+   margin-left: 44vw;
+}
+
+.logo_footer img{
+    width: 12vw;
+    height: 20vh;
+}
+
+/* .logo_footer p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.6em;
+    font-weight: 200;
+    font-style: italic;
+    margin-top: 15vh;
+    margin-left: -1vw;
+} */
+
+.redes_socias{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5vh;
+    padding-left: 23vw;
+}
+
+
+.nossos_conteudos{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5vh;
+    padding-left: 8vw;
+}
+
