@@ -1,41 +1,62 @@
-#body {
-    background-color: #26B0BF;
-    background: linear-gradient(180deg, #26B0BF, white);
+body {
     margin: 0px;
+    background-image: linear-gradient(to bottom, #61CBED, #ffffff 80%); 
+    font-family: sans-serif;
+    overflow-x: hidden;
 }
 
-.header-simulator {
-    background-color: #26B0BF;
-    background: linear-gradient(180deg, #26B0BF, white);
-    align-items: center;
-    width: 100%;
-    padding-bottom: 20%;
-    ;
-}
 
-.container-simulator {
-    width: 80%;
-    margin: auto;
-    display: flex
-}
-
-.header-simulator .container-simulator {
-    height: 100%;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navbar-simulator {
-    width: 500px;
-    list-style: none;
-    align-items: center;
+header{
+    background-color: #61CBED;
     display: flex;
-    padding: 0px;
-    justify-content: space-between;
-    font-size: 30px;
-    color: white;
-    font-family: initial;
-    margin-left: 25%;
+    width: 100vw;
+    box-shadow: 0px 4px 8px white;
+}
+
+.container{
+    width: 80vw;
+    display: flex;
+    margin: 0 auto;
+}
+
+header .container{
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img{
+    width: 20%;
+}
+
+.navbar{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.navbar li{
+    display: flex;
+}
+
+.navbar li a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    margin-right: 3vw;
+}
+
+.navbar li :hover{
+    color: blue;
+    font-size: 1.2em;
+    transition: 0.6s;
+}
+
+.navbar li :active{
+    color: rgb(255, 0, 0);
+    font-size: 1.1em;
+    transition: 0.2s;
 }
 
 #titulo-simulador {
@@ -162,75 +183,92 @@ a:hover {
 }
 
 
-#rodape-simulator {
-    width: 100%;
+footer{
     background-color: black;
-    text-align: center;
-    justify-content: center;
+    width: 100vw;
+    height: 45vh;
+    display: flex
 }
 
-#f-rodape {
-    font-family: initial;
-    font-size: 15px;
+.conteudo_footer{
     color: white;
-    margin-right: 60px;
-    margin-left: 60px;
-}
-
-#s-rodape {
-    font-family: initial;
-    font-size: 15px;
-    color: white;
-    margin-right: 60px;
-    margin-left: 60px;
-}
-
-#r-rodape {
-    font-family: initial;
-    font-size: 15px;
-    color: white;
-    padding-right: 60px;
-    padding-left: 60px;
-    flex-direction: column;
-}
-
-#n-rodape {
-    font-family: initial;
-    font-size: 15px;
-    color: white;
-    padding-right: 60px;
-    padding-left: 60px;
-}
-
-.navbar-rodape {
-    width: 50%;
-    list-style: none;
-    align-items: center;
     display: flex;
-    justify-content: space-between;
-    font-size: 15px;
+    position: relative;
+}
+
+.conteudo_footer a{
+    font-style: italic;
+    font-size: 0.8em;
     color: white;
-    font-family: initial;
+    text-decoration: none;
+    text-align: center;
 }
 
-#img-rodape {
-    background-position: center;
+.titulos_footer{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-bottom: 3%;
 }
 
-.barra-rodape {
-    width: 12px;
-    height: 5px;
+
+.fale_conosco{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5vh;
+    padding-left: 5vw;
+}
+
+.barra{
+    width: 12vw;
+    height: 0.5vh;
     background-color: #61CBED;
     align-self: center;
+    margin-bottom: 5%;
 }
 
-.caixas-rodape {
-    margin: 72px 72px 72px 72px;
+
+.sac{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5vh;
+    padding-left: 9vw;
 }
 
-#p-rodape{
-    font-family: initial;
-    color: grey;
-    font-size: 15px;
-    text-align: center;
+
+.logo_footer{
+   position: absolute;
+   margin-left: 44vw;
+}
+
+.logo_footer img{
+    width: 12vw;
+    height: 20vh;
+}
+
+/* .logo_footer p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.6em;
+    font-weight: 200;
+    font-style: italic;
+    margin-top: 15vh;
+    margin-left: -1vw;
+} */
+
+.redes_socias{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5vh;
+    padding-left: 23vw;
+}
+
+
+.nossos_conteudos{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5vh;
+    padding-left: 8vw;
 }
