@@ -1,0 +1,236 @@
+#body {
+    background-color: #26B0BF;
+    background: linear-gradient(180deg, #26B0BF, white);
+    margin: 0px;
+}
+
+.header-simulator {
+    background-color: #26B0BF;
+    background: linear-gradient(180deg, #26B0BF, white);
+    align-items: center;
+    width: 100%;
+    padding-bottom: 20%;
+    ;
+}
+
+.container-simulator {
+    width: 80%;
+    margin: auto;
+    display: flex
+}
+
+.header-simulator .container-simulator {
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-simulator {
+    width: 500px;
+    list-style: none;
+    align-items: center;
+    display: flex;
+    padding: 0px;
+    justify-content: space-between;
+    font-size: 30px;
+    color: white;
+    font-family: initial;
+    margin-left: 25%;
+}
+
+#titulo-simulador {
+    font-size: 90px;
+    color: white;
+    font-family: initial;
+    justify-items: center;
+    text-align: center;
+}
+
+#sub-titulos-simulator {
+    font-size: 20px;
+    color: white;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+.conteudo-simulator {
+    background-color: #26b0bf4a;
+    border-radius: 50px;
+    align-items: center;
+    width: 100%;
+    padding-top: 5%;
+    padding-bottom: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: center;
+}
+
+.caixa-simulator-um{
+    width: 70%;
+    margin-left: 100px;
+    margin-right: 200px;
+    border-radius: 200px;
+
+}
+
+.caixa-simulador-dois{
+    background-color: #ffffff4a;
+    border-radius: 200px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    
+}
+
+#sel_vacinas {
+    width: 60%;
+    text-align: center;
+    padding: 1%;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.536);
+    font-family: Verdana, Tahoma, sans-serif;
+    color: #26B0BF;
+    font-size: 20px;
+    border: 0;
+}
+
+#in_quantidade {
+    font-size: 25px;
+    width: 60%;
+    text-align: center;
+    padding: 1%;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.536);
+    border: 0;
+}
+
+#in_taxa {
+    font-size: 25px;
+    width: 60%;
+    text-align: center;
+    padding: 1%;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.536);
+    border: 0;
+}
+
+#in_viagens {
+    font-size: 25px;
+    width: 60%;
+    text-align: center;
+    padding: 1%;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.536);
+    border: 0;
+}
+
+#contatos-rodape {
+    justify-content: space-between;
+    text-align: center;
+    color: white;
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 20px;
+    margin-left: 6%;
+    margin-right: 3%;
+    padding-left: 20px;
+}
+
+#p-contato {
+    text-align: center;
+    color: hsla(0, 0%, 50%, 0.562);
+    font-family: initial;
+    font: 20px;
+}
+
+#btn-simulator {
+    padding: 3%;
+    font-family: Verdana, Tahoma, sans-serif;
+    color: white;
+    font-size: 20px;
+    background-color: #0086db;
+    border: 0;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.558) 1px 1px 3px 1px;
+}
+
+#btn-simulator:hover {
+    background-color: #0087db5f;
+}
+
+a:hover {
+    color: white;
+}
+
+
+#rodape-simulator {
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    justify-content: center;
+}
+
+#f-rodape {
+    font-family: initial;
+    font-size: 15px;
+    color: white;
+    margin-right: 60px;
+    margin-left: 60px;
+}
+
+#s-rodape {
+    font-family: initial;
+    font-size: 15px;
+    color: white;
+    margin-right: 60px;
+    margin-left: 60px;
+}
+
+#r-rodape {
+    font-family: initial;
+    font-size: 15px;
+    color: white;
+    padding-right: 60px;
+    padding-left: 60px;
+    flex-direction: column;
+}
+
+#n-rodape {
+    font-family: initial;
+    font-size: 15px;
+    color: white;
+    padding-right: 60px;
+    padding-left: 60px;
+}
+
+.navbar-rodape {
+    width: 50%;
+    list-style: none;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    color: white;
+    font-family: initial;
+}
+
+#img-rodape {
+    background-position: center;
+}
+
+.barra-rodape {
+    width: 12px;
+    height: 5px;
+    background-color: #61CBED;
+    align-self: center;
+}
+
+.caixas-rodape {
+    margin: 72px 72px 72px 72px;
+}
+
+#p-rodape{
+    font-family: initial;
+    color: grey;
+    font-size: 15px;
+    text-align: center;
+}
