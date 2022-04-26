@@ -68,10 +68,12 @@ header .container{
 }
 
 main {
-/*      background-image: url(img-site/fundo-site-linhas-2.png);
+/*  BARRINHAS DO FUNDO
+
+    background-image: url(img-site/Group5.png);
+    background-position: center;  
     background-repeat: no-repeat;
-    background-size:contain;
-    background-position: bottom;  */
+    background-size:99vw; */
     height: 100vh;
 }
 
