@@ -82,7 +82,7 @@ header .container{
         background-image: url(banner-vacina.jpg);
     }
     35%, 65% {
-        background-image: url(banner.png);
+        background-image: url(img-site/banner-teste.png);
     }
     70%, 100% {
         background-image: url(covid_vacines_banner.jpg);
