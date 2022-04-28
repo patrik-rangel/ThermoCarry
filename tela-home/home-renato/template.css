@@ -188,10 +188,7 @@ footer{
     padding-top: 5vh;
     padding-left: 8vw;
 }
-.reservado{
-    display: flex;
-    text-justify: center;
-}
+
 .containermain{
     display: flex;
     justify-items: center ;
