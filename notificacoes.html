@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificações</title>
+    <link rel="stylesheet" href="style-usuario.css">
+</head>
+
+<body>
+
+    <div class="caixa-notificacoes">
+        <div class="caixa-navbar-notificacao">
+            <img id="img-logo" src="logo_thermo-carry-ps.png" width="90%">
+            <ul class="navbar-notificacao">
+                <li id="botao-um"><a href="" style="text-decoration: none;"> Notificações </a></li><br>
+                <li id="botao-dois"><a href="" style="text-decoration: none;"> Dashboard </a></li><br>
+                <li id="botao-tres"><a href="" style="text-decoration: none;"> Chamados</a></li><br>
+                <li id="botao-sair"><a href="" style="text-decoration: none;"> Sair</a></li>
+            </ul>
+        </div>
+
+
+        <div class="caixas">
+            <h1 class="titulo-notificacao">Notificações</h1>
+
+            <div class="caixa_vermelha">
+                <p id="div_frase1">
+                    <img id="img-alerta" src="alerta.png" width="20px"> &nbsp;
+                    <b>28 de Abril de 2022 | </b><strong> Caminhão de placa JU23L53 </strong>
+                    | <u>LOTE: TM123456789 em estado ineficaz!</u>
+                    <img id="img_foto1" src="fechar.png" width="10px" onclick="fechar()">
+                </p>
+            </div>
+            <div class="caixa-laranja">
+                <p id="div_frase2">
+                    <img id="img-alerta" src="alerta.png" width="20px"> &nbsp;
+                    <b>28 de Abril de 2022 | </b><strong> Caminhão de placa JU23L53 </strong>
+                    | <u>LOTE: TM123456789 próximo de ficarem ineficazes!</u>
+                    <img id="img_foto1" src="fechar.png" width="10px" onclick="fechar()">
+                </p>
+            </div>
+            <div class="caixa-amarela">
+                <p id="div_frase3">
+                    <img id="img-alerta" src="alerta.png" width="20px"> &nbsp;
+                    <b>28 de Abril de 2022 | </b><strong> Caminhão de placa JU23L53 </strong>
+                    | <u>LOTE: TM123456789 em alerta de temperatura!</u>
+                    <img id="img_foto1" src="fechar.png" width="10px" onclick="fechar()">
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+<footer>
+    <p class="conteudo_footer">© 2022 ThermoCarry • Todos os direitos reservados •</p>
+</footer>
+
+</html>
+<script>
+    function fechar() {
+        div_frase1.innerHTML = ""
+        div_frase2.innerHTML = ""
+        div_frase3.innerHTML = ""
+    }
+</script>
