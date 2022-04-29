@@ -76,6 +76,7 @@ header .container{
     animation: slide 10s infinite;
     animation-duration: alternate;
     border-bottom: 5px solid rgb(255, 255, 255);
+    background-size: cover;
 }
 @keyframes slide{
     0%, 30% {
@@ -142,12 +143,20 @@ main {
     box-shadow: -10px 10px 40px white;
     border: solid 2px #61caed91;
 }
-.containermain:hover {
+.containermain:hover  {
     -webkit-transform: scale(1.02);
     -ms-transform: scale(1.02);
     transform: scale(1.02);
     border: solid 2px #51b1d1cf;
     background-color: rgba(255, 255, 255, 0.827);
+    
+}
+.containermain:hover .titulo {
+    color: white;
+    text-shadow: 0px 5px 10px red; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 }
 .containermain2:hover {
     -webkit-transform: scale(1.02);
@@ -155,6 +164,7 @@ main {
     transform: scale(1.02);
     border: solid 2px #51b1d1cf;
     background-color: rgba(255, 255, 255, 0.827);
+    
 }
 
 
@@ -165,13 +175,27 @@ main {
     color: white;
     text-shadow: 0px 5px 10px #61caed; 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 20px;
+
+    
 }
 
 .cm_conteudo p{
     font-weight: 500;
-    font-size: 1.3em;
-    margin-top: 10%;
-    color: #525252;
+    font-size: 1.2em;
+    color:black ;
+    display: flex;
+    margin: auto;
+    height: 300px;
+    width: 500px;
+    background-color: #61caed;
+    border-radius: 90px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: solid red 2.5px;
+    padding: 0px 20px 0px 20px;
+    
 }
 
 footer{
