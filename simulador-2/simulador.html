@@ -43,17 +43,19 @@
                 <br><br>
 
                 <h5 id="sub-titulos-simulator">Quantas vacinas serão transportadas por viagem?</h5>
-                <input id="in_quantidade"><br><br>
+                <input id="in_quantidade" type="number"><br><br>
 
                 <h5 id="sub-titulos-simulator">Taxa média de desperdício por viagem:</h5>
-                <input id="in_taxa"><br><br>
+                <input id="in_taxa" type="number"><br><br>
 
                 <h5 id="sub-titulos-simulator">Média de viagens por dia:</h5>
-                <input id="in_viagens"><br><br>
+                <input id="in_viagens" type="number"><br><br>
 
                 <button onclick="desperdício()" id="btn-simulator">Simular</button><br><br><br><br>
+            
 
                 <div id="div_resultado"></div>
+ 
             </div>
         </div>
         <!--Fim da caixa 1 do simulador-->
@@ -102,14 +104,26 @@
         var taxa = Number(in_taxa.value)
         var viagem = Number(in_viagens.value)
 
-        // if (vacina == "") {
-        //     alert (`Por favor, selecione uma vacina.`)
-        // }
 
-        if (vacina == "" && quantidade == "" && taxa == "" && viagem == "") {
-            alert ('Por favor, preencha os campos')
+        //  if (vacina == "") {
+        //     alert ('Por favor, preencha TODOS os campos!')
+        // }
+        // if (quantidade == "") {
+        //     alert ('Por favor, preencha TODOS os campos!')
+        // }
+        // if (taxa == "") {
+        //     alert ('Por favor, preencha TODOS os campos!')
+        // }
+        // if (viagem == "") {
+        //     alert ('Por favor, preencha TODOS os campos!')
+        // } 
+
+        if (vacina == "" || quantidade == "" || taxa == "" || viagem == "") {
+            alert ('Por favor, preencha TODOS os campos!')
         }
+        
         else {
+         
         div_resultado.innerHTML = `• O custo da vacina escolhida é de R$${vacina}. Transportando ${quantidade} unidades por viagem 
         chegamos no valor bruto de <b>R$${(vacina * quantidade).toFixed(2)}</b>.<br><br>
 
@@ -119,7 +133,7 @@
 
         • Com a nossa solução, a taxa de ${taxa}% cai para em média ${taxa / 2}% se vigiadas corretamente, resultando no valor líquido 
         de <b>R$${(((vacina * quantidade) * viagem) - (((vacina * quantidade) * (taxa / 2) / 100) * viagem)).toFixed(2)}</b>`
-        }
+         }
     }
 
 </script>
