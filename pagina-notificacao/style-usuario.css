@@ -5,12 +5,13 @@ body {
 
 
 .caixa-navbar-notificacao {
-    background-color: #26B0BF;
+    background-color: #6695F2;
     width: 20%;
     display: flex;
     flex-direction: column;
     padding-bottom: 10%;
-
+    border-start-end-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
 
 .navbar-notificacao {
@@ -23,51 +24,57 @@ body {
 }
 
 #botao-um {
-    background-color:rgba(255, 255, 255, 0.321);
+    margin-top: 30px;
+    background-color: #8BABF7;
     padding: 20px 80px 20px 90px;
-    border-end-start-radius: 50px;
+    border-start-end-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
 
 #botao-dois {
-    background-color: rgba(255, 255, 255, 0.318);
+    background-color: #8BABF7;
     padding: 20px 90px 20px 90px;
-    border-end-start-radius: 50px;
+    border-start-end-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
 
 #botao-tres {
-    background-color: rgba(255, 255, 255, 0.321);
+    background-color: #8BABF7;
     padding: 20px 90px 20px 90px;
-    border-end-start-radius: 50px;
+    border-start-end-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
 
 #botao-sair {
-    background-color: #ff6961;
+    background-color: #000000;
     width: 100px;
     border-radius: 50px;
     margin-top: 20px;
     color: white;
     margin-left: 80px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .caixa-notificacoes {
     width: 100%;
     display: flex;
     flex-direction: row;
-    background: linear-gradient(180deg, #26B0BF, white);
+    background: linear-gradient(180deg, #D5DEFB, #8BABF7, #000000);
 }
 
-p {
+p { font-size: 90%;
     color: black;
     text-align: justify;
     padding: 20px 20px 20px 20px;
 }
 
-.titulo-notificacao{
-    color: #26B0BF;
+.titulo-notificacao {
+    color: #000000;
     font-size: 50px;
 }
 
-#img_foto1{
+#img_foto1 {
     float: right;
     margin-left: 20px;
 }
@@ -77,54 +84,84 @@ p {
     width: 80%;
     margin-right: 3%;
     margin-left: 3%;
-    padding-left: 10%;
+    padding-left: 5%;
     margin-top: 3%;
     margin-bottom: 3%;
 }
 
-.caixa_vermelha {
-    width: 85%;
-    background-color: #ff6961;
-    border-radius: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-right: 30px;
-    padding-left: 20px;
+
+#teste{
+    width:85%;
+    border-radius: 10px; 
+    text-align:right;
+    background: #F20505;
+    box-shadow: 2px 2px;
 }
 
-.caixa-laranja {
-    width: 85%;
-    background-color: #f4ae72;
-    border-radius: 10px;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    padding-right: 30px;
-    padding-left: 20px;
-
+#teste2{
+    width:85%;
+    border-radius: 10px; 
+    text-align:right;
+    background: #F29F05;
+    box-shadow: 2px 2px;
 }
 
-.caixa-amarela {
-    width: 85%;
-    background-color: #ffdb58;
-    border-radius: 10px;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    padding-right: 30px;
-    padding-left: 20px;
-
+#teste3{
+    width:85%;
+    border-radius: 10px; 
+    text-align:right;
+    background: #F2E205;
+    box-shadow: 2px 2px;
 }
 
-a:hover {
+#fechar1{
+    color:black; 
+    width:25px; 
+    height:25px; 
+    align-self:center;
+    margin-left: 5%;
+}
+
+#fechar2{
+    color:black; 
+    width:25px; 
+    height:25px; 
+    align-self:center;
+    margin-left: 5%;
+}
+
+#fechar3{
+    color:black; 
+    width:25px; 
+    height:25px; 
+    align-self:center;
+    margin-left: 5%;
+}
+
+a { font-family: initial;
     align-items: center;
     color: white;
-    text-decoration: none;
-    margin: 20px 10px 20px 10px;
-
 }
 
 .conteudo_footer {
     background-color: black;
+    color: grey;
     text-align: center;
     margin: 0;
 }
 
+#ver_dashboard{
+    background-color:#6695F2;
+    border-radius: 50px;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+#img-alerta{
+    width: 20px;
+}
