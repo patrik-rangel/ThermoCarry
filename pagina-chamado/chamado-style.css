@@ -5,6 +5,8 @@ body {
 
 
 .caixa-navbar-chamado {
+    background-color: #26B0BF;
+    /* background-color: #4cc4d1; */
     width: 20%;
     display: flex;
     flex-direction: column;
@@ -35,14 +37,18 @@ body {
 
 #botao-tres {
     background-color: rgba(255, 255, 255, 0.318);
-    padding: 20px 80px 20px 90px;
+    padding: 20px 75px 20px 90px;
     border-end-start-radius: 50px;
 }
 
 #botao-sair {
+    background-color: #ff6961;
+    width: 100px;
+    border-radius: 50px;
     margin-top: 20px;
     color: white;
-    margin-bottom: 0px;
+    margin-left: 80px;
+    font-weight: 600;
 }
 
 .caixa-chamados {
@@ -60,18 +66,43 @@ body {
 
 .abrir-chamado {
     text-align: justify;
-    color: #26B0BF;
+    color: rgb(97, 96, 96);
+    font-weight: 0;
     font-size: 20px;
     margin-right: 50px;
 }
 
 .botao-chamado {
     cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    color: white;
+    background-color: #26B0BF;
+    margin-top: 20px;
 }
 
-#in_chamado {
-    height: 350px;
-    width: 815px;
+#ta_chamado {
+    height: 300px;
+    width: 700px;
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border-color: rgb(102, 101, 101);
+    border-width: 2px;
+}
+
+#botao-enviar {
+    cursor: pointer; 
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-top: 10px;
+    color: white;
+    background-color: #F21616;
+
 }
 
 p {
