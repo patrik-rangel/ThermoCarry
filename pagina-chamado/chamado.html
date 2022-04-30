@@ -36,7 +36,8 @@
             <button class="botao-chamado" onclick="abrir()">Abrir um Chamado</button>
 
             <div id=div_chamado style="display:none">
-            <input id="in_chamado" type="text" placeholder="Digitar chamado">
+                <textarea id="ta_chamado" cols="30" rows="5"></textarea> <br>
+                <button id="botao-enviar" onclick="enviar()">Enviar</button>
             </div>
 
             
@@ -55,6 +56,12 @@
     function abrir (){
 
         div_chamado.style.display = 'block'
+    }
 
+    function enviar (){
+        
+        alert ('Seu chamado foi enviado com sucesso! Aguarde sua resposta.')
+        ta_chamado.value = " "
+        div_chamado.style.display = 'none'
     }
 </script>
