@@ -12,26 +12,26 @@
 
 <body>
 
-    <div class="caixa-chamados">
-        <div class="caixa-navbar-chamado">
-            <img id="img-logo" src="logo_thermo-carry-ps.png" width="90%">
-            <ul class="navbar-chamado">
-                <li id="botao-um"><a href="" style="text-decoration: none; color: white;"> Notificações </a></li><br>
-                <li id="botao-dois"><a href="" style="text-decoration: none; color: white;"> Chamados</a></li><br>
-                <li id="botao-sair"><a href="" style="text-decoration: none; color: white;"> Sair</a></li>
-            </ul>
+    <div class="conteudo">
+        <div class="lateral">
+            <img src="img-site/logo_thermo-carry-2.png" alt="">
+            <div class="navbar">
+                <span><a href="../pagina-notificacao/notificacoes.html">Notificação</a></span>
+                <span><a href="../pagina-chamado/chamado.html">Chamado</a></span>
+                <span id="sair"><a href="">Sair</a></span>
+            </div>
         </div>
 
 
         <div class="caixas">
             <h1 class="titulo-chamado">Chamados</h1>
 
-            <h2 class="abrir-chamado">  
-            Abra aqui um chamado e resolva da maneira mais rápido possível,  
-            detalhando a situação.  <br>
-            Se necessário, diga também como gostaria que o problema fosse resolvido 
-            e possíveis observações.</h2> 
-            
+            <h2 class="abrir-chamado">
+                Abra aqui um chamado e resolva da maneira mais rápido possível,
+                detalhando a situação. <br>
+                Se necessário, diga também como gostaria que o problema fosse resolvido
+                e possíveis observações.</h2>
+
             <button class="botao-chamado" onclick="abrir()">Abrir um Chamado</button>
 
             <div id=div_chamado style="display:none">
@@ -45,12 +45,12 @@
                     <option value="outro">Outro</option>
                 </select> <br>
 
-                <textarea id="ta_chamado" cols="30" rows="5" placeholder="Digite aqui seu chamado"></textarea> <br> 
+                <textarea id="ta_chamado" cols="30" rows="5" placeholder="Digite aqui seu chamado"></textarea> <br>
                 <button id="botao-enviar" onclick="enviar()">Enviar</button>
             </div>
 
-            
-            
+
+
         </div>
 
     </div>
@@ -62,22 +62,23 @@
 </html>
 
 <script>
-    function abrir (){
+    function abrir() {
 
         div_chamado.style.display = 'block'
     }
 
-    function enviar (){
+    function enviar() {
         var chamado = ta_chamado.value
 
         if (chamado == "" || sel_chamado.value == "") {
-            alert ('Por favor, faça o seu chamado antes de enviá-lo.')
-        } else{
+            alert('Por favor, faça o seu chamado antes de enviá-lo.')
+        } else {
 
-        alert ('Seu chamado foi enviado com sucesso! Aguarde sua resposta.')
-        ta_chamado.value = " "
-        sel_chamado.value = ""
-        div_chamado.style.display = 'none'
+            window.location.href = 'file:///D:/ThermoCarry/paginas-usuario/pagina-chamado/confirmacao.html'
+            /*  alert ('Seu chamado foi enviado com sucesso! Aguarde sua resposta.') */
+            ta_chamado.value = " "
+            sel_chamado.value = ""
+            div_chamado.style.display = 'none'
         }
     }
 </script>
