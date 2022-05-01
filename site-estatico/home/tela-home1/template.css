@@ -1,6 +1,6 @@
 body {
     margin: 0px;
-    background: linear-gradient(180deg, #D5DEFB, #8BABF7, #000000);
+    background-image: linear-gradient(to bottom, #61CBED, #e4e5e6 80%);
     font-family: sans-serif;
     overflow-x: hidden;
 
@@ -22,7 +22,7 @@ header .container {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #6695F2;
+    background-color: #61caed;
     position: fixed;
     width: 100%;
     box-shadow: 0px 4px 8px white;
@@ -83,17 +83,17 @@ header .container {
 
     0%,
     30% {
-        background-image: url(img-site/banner-5.png);
+        background-image: url(banner-vacina.jpg);
     }
 
     35%,
     65% {
-        background-image: url(img-site/banner-paint-2-canva.png);
+        background-image: url(img-site/banner-teste.png);
     }
 
     70%,
     100% {
-        background-image: url(img-site/covid_vacines_banner-canva.png);
+        background-image: url(covid_vacines_banner.jpg);
     }
 
 }
@@ -158,60 +158,47 @@ main {
     -webkit-transform: scale(1.02);
     -ms-transform: scale(1.02);
     transform: scale(1.02);
-    border: solid 2px #6695F2;
+    border: solid 2px #51b1d1cf;
     background-color: rgba(255, 255, 255, 0.827);
 
 }
 
 .containermain:hover .titulo {
     color: white;
-    text-shadow: 0px 5px 10px #6695F2;
+    text-shadow: 0px 5px 10px red;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .containermain:hover p{
-    border: solid #6695F2 2.5px;
-    background-image: linear-gradient(to left, white, #6695F2);
+    border: solid red 2.5px;
 }
 
 .containermain2:hover {
     -webkit-transform: scale(1.02);
     -ms-transform: scale(1.02);
     transform: scale(1.02);
-    border: solid 2px #6695F2;
+    border: solid 2px #51b1d1cf;
     background-color: rgba(255, 255, 255, 0.827);
 
 }
 
-.containermain2:hover .icones div{
-    border: solid rgb(0, 0, 0) 2.5px;
-}
-
-
 .containermain2:hover .missaobox{
-    border: solid rgb(0, 0, 0) 2.5px;
-    background-image: linear-gradient(to left, white, #6695F2);
+    border: solid red 2.5px;
 }
 
 .containermain2:hover .visaobox{
-    border: solid black 2.5px;
-    background-image: linear-gradient(to left, white, #6695F2);
+    border: solid red 2.5px;
 }
 
 
 .containermain2:hover .valoresbox{
-    border: solid black 2.5px;
-    background-image: linear-gradient(to left, white, #6695F2);
+    border: solid red 2.5px;
 }
 
 .containermain2:hover img{
     border: solid 2.5px red;
 }
 
-
-.containermain2:hover .div_icone {
-    border: solid 2.5px black;
-}
 
 .cm_conteudo h1 {
     text-transform: uppercase;
@@ -238,9 +225,9 @@ main {
     background-image: linear-gradient(to left, white, #6bdaff);
     justify-content: center;
     align-items: center;
-    text-align: justify;
+    text-align: center;
     border-radius: 60px;
-    border: solid 2px #61caed91;
+    border: solid rgb(69, 130, 237) 2.5px;
     padding: 0px 20px 0px 20px;
     /*     background-clip: padding-box;
     border-image: linear-gradient(to right, #9adff6, red) 1;
@@ -254,9 +241,6 @@ main {
     border: solid rgb(255, 0, 0) 2.5px;
     transition: 0.7s;
 } */
-
-
-
 
 .containermain2 .icones {
     display: flex;
@@ -275,32 +259,6 @@ main {
     display: flex;
     flex-direction: column;
 
-}
-
-.icones div{
-    height: 180px;
-    width: 75px;
-    border-radius: 100px;
-    margin: 30px 0px;
-    border: solid 2.5px rgb(58, 58, 235);
-}
-
-#missao{
-    background-image: url(img-site/icone-medico-removebg-preview.png);
-    background-size: 110px;
-    background-position: center;
-}
-
-#visao{
-    background-image: url(img-site/icone-termometro-ps.png);
-    background-size: 110px;
-    background-position: center;
-}
-
-#valores{
-    background-image: url(img-site/icone-vacina-ps.png);
-    background-size: 110px;
-    background-position: center;
 }
 
 .icones img{

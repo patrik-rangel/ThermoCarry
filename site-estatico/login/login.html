@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="login.css">
+    <link rel="shortcut icon" href="img-site/logo_thermo-carry-2.png" type="image/x-icon" />
+    <title>ThermoCarry - Template</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img-site/logo_thermo-carry-2-escrita.png" alt="">
+            </div>
+            <ul class="navbar">
+                <li><a href="../home/TelaHome.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="../Cadastro/cadastro.html">Cadastro</a></li>
+                <li><a href="../simulador-thermocarry/simulador.html">Simulador </a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Colocar todo conteudo do "meio" do site aqui dentro -->
+
+        <div class="titulo" style="text-decoration: none;">
+            <img id="imagem" src="img-site/usuariologin1.png" style="height: 50px;">
+            <b>Login</b>
+        </div>
+
+        <div class="card2">
+        
+
+
+        <div class="borda">
+            <div class="card1">
+                <img src="img-site/vacinalogin2.jpg" style="height: 320px; width: 500px;">
+            </div>
+            <div class="info">
+                <div class="texto">
+                    Email <input type="text" id="i_email" placeholder="Email" style="height: 20px "> <br> <br>
+                    Senha <input type="password" id="i_senha" placeholder="Senha" style="height: 20px"> <br> <br>
+                    <div class="ancora"> <a href="#">Esqueceu a senha?</a> <br>
+                        Não tem Cadastro? <a href="#"> cliquei aqui</a> <br> </div>
+                    <button class="botao" onclick="entrar()">Entrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+
+    <footer>
+        <div class="conteudo_footer">
+            <div class="fale_conosco">
+                <p class="titulos_footer">Fale conosco</p>
+                <div class="barra"></div>
+                <a href="mailto:patrik.souza@sptech.school">atendimento@thermocarry</a>
+                <!-- Substituir esse email depois -->
+            </div>
+            <div class="sac">
+                <p class="titulos_footer">Sac</p>
+                <div class="barra"></div>
+                <a href="tel:+5511983326043">(xx)xxxx-xxxx</a>
+            </div> <!-- Substituir o numero depois -->
+            <div class="logo_footer">
+                <img src="img-site/logo_thermo-carry-2.png" alt="">
+                <p>© 2022 ThermoCarry • Todos os direitos reservados •</p>
+            </div>
+            <div class="redes_socias">
+                <p class="titulos_footer">Redes Socias</p>
+                <div class="barra"></div>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+            </div>
+            <div class="nossos_conteudos">
+                <p class="titulos_footer">Nossos conteudos</p>
+                <div class="barra"></div>
+                <a href="#">Home</a>
+                <a href="#">Cadastro</a>
+                <a href="#">Login</a>
+                <a href="">Simulador financeiro</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<script>
+    function entrar() {
+        var email = i_email.value
+        var senha = i_senha.value
+
+        if (email == "") {
+            alert('Insira seu Email')
+        }
+
+        if (senha == "") {
+            alert('Insira sua Senha')
+        }
+
+        if(email == 'a' && senha == 'b')
+        window.location.href = '../paginas-usuario/pagina-notificacao/notificacoes.html'
+
+    }
+</script>
