@@ -75,6 +75,21 @@ main {
 
 }
 
+main .titulo {
+    color:white;
+    margin: auto;
+    margin-top: -1000px;
+    margin-block: 150px;
+    margin-bottom: 40px;
+    font-size: 50px;
+    font-family:initial;
+    flex-direction: column;
+}
+
+#imagem {
+    margin-block: -7px;
+}
+
 footer{
     background-color: black;
     width: 100vw;
@@ -171,7 +186,7 @@ footer{
     width: 1150px;
     height: 500px;
     margin: auto;
-    margin-top: 20vh;
+    margin-top: 0;
     border-radius: 20px;
     display: flex;
     flex-direction: row;
@@ -194,22 +209,35 @@ footer{
 }
 
 .btn {
-    height: 40px;
-    width: 110px;
-    margin-bottom: 20px;
-    font-weight: 600;
-    border: 2px solid red;
-    color: white;
-    background-color: red ;
+    background-color: rgba(248, 28, 28, 0.966);
+    color:white;
+    height: 35px;
+    width: 100px;
+    cursor: pointer;
     border-radius: 20px;
-    border: 2px solid black;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-size: 17px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+.btn:hover {
+    background-color: red;
+    color:white;
+    height: 45px;
+    width: 120px;
+    margin-top: 13px;
+    font-weight: 600;
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 
 input {
     height: 30px;
+    width: 200px;
     background-color: whitesmoke;
     border: 3px solid #1E90FF;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 .img{
