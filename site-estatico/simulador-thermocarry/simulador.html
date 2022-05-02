@@ -45,7 +45,8 @@
                 <h5 id="sub-titulos-simulator">Quantas vacinas serão transportadas por viagem?</h5>
                 <input id="in_quantidade" type="number"><br><br>
 
-                <h5 id="sub-titulos-simulator">Taxa média de desperdício por viagem:</h5>
+                <h5 id="sub-titulos-simulator">Taxa média de desperdício por viagem:<br>
+                (Em porcentagem)</h5>
                 <input id="in_taxa" type="number"><br><br>
 
                 <h5 id="sub-titulos-simulator">Média de viagens por dia:</h5>
@@ -118,9 +119,21 @@
         //     alert ('Por favor, preencha TODOS os campos!')
         // } 
 
-        if (vacina == "" || quantidade == "" || taxa == "" || viagem == "") {
+        if (vacina == "" || vacina == null, quantidade == "" || quantidade == null, taxa == "" || taxa == null, viagem == "" || viagem == null) {
             alert ('Por favor, preencha TODOS os campos!')
         }
+
+        if (viagem <= 0) {
+                alert ('Valor do campo "Quantas vacinas serão transportadas por viagem" inválido!!! Insira um valor maior que 0!')
+            }
+
+        if (taxa < 0 || taxa > 100) {
+                alert ('Valor do campo "Taxa média de desperdício por viagem" inválido!!! Insira um valor de 0 a 100!')
+            }
+
+        if (viagem <= 0) {
+                alert ('Valor do campo "Média de viagens por dia" inválido!!! Insira um valor maior que 0!')
+            }
         
         else {
          

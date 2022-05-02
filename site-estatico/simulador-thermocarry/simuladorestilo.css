@@ -59,6 +59,7 @@ header .container{
     transition: 0.2s;
 }
 
+
 #titulo-simulador {
     font-size: 50px;
     color: white;
@@ -100,6 +101,7 @@ header .container{
     padding-bottom: 5%;
     margin-left: 20%;
     margin-right: 20%;
+    margin-bottom: 50px;
 }
 
 #sel_vacinas {
