@@ -1,6 +1,6 @@
 body{
     margin: 0px;
-    background: linear-gradient(180deg, #D5DEFB, #8BABF7, #000000);
+    background-image: linear-gradient(to bottom, #61CBED, #e4e5e6 80%);
     font-family: sans-serif;
     overflow-x: hidden;
 
@@ -8,7 +8,7 @@ body{
 
 
 header{
-    background-color: #6695F2;
+    background-color: #61CBED;
     display: flex;
     position: fixed;
     width: 100vw;
@@ -62,106 +62,17 @@ header .container{
 }
 
 
-.banner img{
+.banner{
     width: 100vw;
     height: 50vh;
 }
 
-
 main {
-    height: 140vh;
+    height: 120vh;
     background-color: linear-gradient(to bottom, #61CBED, #e4e5e6 80%);
     display: flex;
     flex-direction: column;
-}
 
-.card2 {
-    display: flex;
-    flex-direction: row;
-}
-
-.card1 {
-    margin-top: 35.5px;
-    margin-left: 50px;
-}
-
-.card1 img {
-    border-right: 2 px solid white;
-}
-
-main .borda {
-    background-color: rgba(255, 255, 255, 0.329);
-    width: 1100px;
-    height: 400px;
-    margin: auto;
-    margin-top: -100px;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: row;
-}
-
-main .borda .info {
-    background-color:#6695F2;
-    border-width: 60%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 500px;
-    height: 300px;
-    margin:auto;
-    margin-top: 35.5px;
-    margin-right: 50px;
-    align-items: center;
-    flex-direction: row;
-    border-left: 2px solid white;
-}
-
-#imagem {
-    margin-block: -7px;
-    
-} 
-
-main .titulo {
-    color:white;
-    margin: auto;
-    margin-top: -1000px;
-    margin-block: 150px;
-    font-size: 50px;
-    font-family:initial;
-    flex-direction: column;
-}
-
-main .texto {
-    color: black;
-    margin-block: 15px;
-    padding: 50px;
-    text-align: center;
-    font-size: 20px;
-    font-family: sans-serif;
-}
-
-main .texto .ancora {
-    font-size: 15px ;
-}
-
-main .botao {
-    background-color: rgba(248, 28, 28, 0.966);
-    color:white;
-    height: 30px;
-    width: 100px;
-    border-radius: 20px;
-    margin-top: 10px;
-    font-size: 17px;
-    font-family: sans-serif;
-}
-
-.botao:hover {
-    background-color: red;
-    color:white;
-    height: 35px;
-    width: 110px;
-    margin-top: 13px;
-    font-size: 20px;
-    font-family: sans-serif;
 }
 
 footer{
@@ -253,3 +164,60 @@ footer{
     padding-top: 5vh;
     padding-left: 8vw;
 }
+
+/* cadastro*/
+.borda{
+    background-color: rgb(255, 255, 255, 0.329 );
+    width: 1150px;
+    height: 500px;
+    margin: auto;
+    margin-top: 20vh;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.borda .card{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color:#61CBED;
+    height: 430px;
+    width: 500px;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 10px;
+    border-left: 2px solid whitesmoke;
+}
+
+.btn {
+    height: 40px;
+    width: 110px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    border: 2px solid red;
+    color: white;
+    background-color: red ;
+    border-radius: 20px;
+    border: 2px solid black;
+}
+
+input {
+    height: 30px;
+    background-color: whitesmoke;
+    border: 3px solid #1E90FF;
+    border-radius: 10px;
+}
+
+.img{
+    height: 430px;
+    width: 600px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+
+

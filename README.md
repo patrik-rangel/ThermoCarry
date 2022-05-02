@@ -1,3 +1,2 @@
-# pagina-usuario-thermocarry
-
-Sprint 2
+# ThermoCarry
+Repositório para o projeto ThermoCarry
