@@ -1,0 +1,255 @@
+body{
+    margin: 0px;
+    background: linear-gradient(180deg, #D5DEFB, #8BABF7, #000000);
+    font-family: sans-serif;
+    overflow-x: hidden;
+
+}
+
+
+header{
+    background-color: #6695F2;
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    box-shadow: 0px 4px 8px white;
+}
+
+.container{
+    width: 80vw;
+    display: flex;
+    margin: 0 auto;
+}
+
+header .container{
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img{
+    width: 50%;
+}
+
+.navbar{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.navbar li{
+    display: flex;
+}
+
+.navbar li a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    margin-right: 3vw;
+}
+
+.navbar li :hover{
+    color: blue;
+    font-size: 1.2em;
+    transition: 0.6s;
+}
+
+.navbar li :active{
+    color: rgb(255, 0, 0);
+    font-size: 1.1em;
+    transition: 0.2s;
+}
+
+
+.banner img{
+    width: 100vw;
+    height: 50vh;
+}
+
+
+main {
+    height: 140vh;
+    background-color: linear-gradient(to bottom, #61CBED, #e4e5e6 80%);
+    display: flex;
+    flex-direction: column;
+}
+
+.card2 {
+    display: flex;
+    flex-direction: row;
+}
+
+.card1 {
+    margin-top: 35.5px;
+    margin-left: 50px;
+}
+
+.card1 img {
+    border-right: 2 px solid white;
+}
+
+main .borda {
+    background-color: rgba(255, 255, 255, 0.329);
+    width: 1100px;
+    height: 400px;
+    margin: auto;
+    margin-top: -100px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+main .borda .info {
+    background-color:#6695F2;
+    border-width: 60%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 500px;
+    height: 300px;
+    margin:auto;
+    margin-top: 35.5px;
+    margin-right: 50px;
+    align-items: center;
+    flex-direction: row;
+    border-left: 2px solid white;
+}
+
+#imagem {
+    margin-block: -7px;
+    
+} 
+
+main .titulo {
+    color:white;
+    margin: auto;
+    margin-top: -1000px;
+    margin-block: 150px;
+    font-size: 50px;
+    font-family:initial;
+    flex-direction: column;
+}
+
+main .texto {
+    color: black;
+    margin-block: 15px;
+    padding: 50px;
+    text-align: center;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+main .texto .ancora {
+    font-size: 15px ;
+}
+
+main .botao {
+    background-color: rgba(248, 28, 28, 0.966);
+    color:white;
+    height: 30px;
+    width: 100px;
+    border-radius: 20px;
+    margin-top: 10px;
+    font-size: 17px;
+    font-family: sans-serif;
+}
+
+.botao:hover {
+    background-color: red;
+    color:white;
+    height: 35px;
+    width: 110px;
+    margin-top: 13px;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+footer{
+    background-color: black;
+    width: 100vw;
+    height: 45vh;
+    display: flex
+}
+
+.conteudo_footer{
+    color: white;
+    display: flex;
+    position: relative;
+}
+
+.conteudo_footer a{
+    font-style: italic;
+    font-size: 0.8em;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+.titulos_footer{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-bottom: 3%;
+}
+
+
+.fale_conosco{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5vh;
+    padding-left: 5vw;
+}
+
+.barra{
+    width: 12vw;
+    height: 0.5vh;
+    background-color: #61CBED;
+    align-self: center;
+    margin-bottom: 5%;
+}
+
+
+.sac{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5vh;
+    padding-left: 9vw;
+}
+
+
+.logo_footer{
+   position: absolute;
+   margin-left: 44vw;
+}
+
+.logo_footer img{
+    width: 12vw;
+    height: 20vh;
+}
+
+ .logo_footer p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+    font-weight: 200;
+    font-style: italic;
+    margin-top: 15vh;
+    margin-left: -5vw;
+} 
+
+.redes_socias{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5vh;
+    padding-left: 23vw;
+}
+
+
+.nossos_conteudos{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5vh;
+    padding-left: 8vw;
+}
