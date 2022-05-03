@@ -11,7 +11,7 @@ body {
 
 
 .lateral {
-    height: 100vh;
+    height: 120vh;
     width: 21.5vw;
     border-top-right-radius: 10%;
     border-bottom-right-radius: 10%;
@@ -62,6 +62,7 @@ body {
 
 a{
     text-decoration: none;
+    color: white;
 }
 
 a:visited{
@@ -86,6 +87,97 @@ section {
 .grafico h1 {
     text-align: center;
 }
+
+
+.metricas{
+    background-color: yellow;
+    width: 60vw;
+    height: 15vh;
+    margin: 0 auto;
+    display: flex;
+    border-bottom: 3px solid black;
+    border-top: 3px solid black;
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+    margin-bottom: 1%;
+}
+
+.dados_metricas{
+    width: 7.5vw;
+    height: 15vh;
+}
+
+.dados_metricas .p_critico{
+    border-bottom: 3px solid black;
+    text-align: center;
+    font-weight: 900;
+    font-size: 0.9em;
+    margin-top: -1%;
+    background-color: rgb(194, 0, 0);
+    color: white;
+    padding-bottom: 3%;
+}
+
+.dados_metricas .p_emergencia{
+    border-bottom: 3px solid black;
+    text-align: center;
+    font-weight: 900;
+    font-size: 0.9em;
+    margin-top: -1%;
+    background-color: rgb(211, 137, 0);
+    color: white;
+    padding-bottom: 3%;
+}
+
+.dados_metricas .p_alerta{
+    border-bottom: 3px solid black;
+    text-align: center;
+    font-weight: 900;
+    font-size: 0.9em;
+    margin-top: -1%;
+    background-color: rgb(196, 196, 0);
+    color: white;
+    padding-bottom: 3%;
+}
+
+.dados_metricas .p_ideal{
+    border-bottom: 3px solid black;
+    text-align: center;
+    font-weight: 900;
+    font-size: 0.9em;
+    margin-top: -1%;
+    background-color: green;
+    color: white;
+    padding-bottom: 2%;
+}
+
+
+#critico_e, #critico_d{
+    /* background-color: #110F36; */
+    background-color: red; 
+    border: 1px solid black;
+}
+
+#emergencia_e , #emergencia_d{
+    /* background-color: #252175; */
+     background-color: orange; 
+    border: 1px solid black;
+}
+
+#alerta_e , #alerta_d{
+    /* background-color: #3933B5; */
+     background-color: yellow; 
+    border: 1px solid black;
+}
+
+#ideal_e {
+    /* background-color: #4D44F5; */
+     background-color: green; 
+    border: 1px solid black;
+    width: 15vw;
+} 
+
+
 
 .info{
     background-color: #6695F2;
@@ -121,38 +213,49 @@ section {
     display: flex;
     flex-direction: column;
     margin-top: 5%;
-    width: 20vw;
-    height: 25vh;
-    background-color: rgb(0, 8, 255);
+    width: 15vw;
+    height: 20vh;
+    background-color: #252175;
     border-radius: 20px;
     font-weight: 700;
     padding: 0.1%;
     margin-right: 20%;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px white;
+    margin-bottom: 5%;
 }
 
 .kpi2{
     display: flex;
     flex-direction: column;
     margin-top: 5%;
-    width: 20vw;
-    height: 25vh;
-    background-color: rgb(255, 0, 0);
+    width: 15vw;
+    height: 20vh;
+    background-color: #110F36;
     border-radius: 20px;
     font-weight: 700;
     padding: 0.1%;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px white;
+    margin-bottom: 5%;
 }
 
 .kpi h3{
     text-align: center;
+    color: white;
 }
 
 .kpi2 h3{
     text-align: center;
+    color: white;
 }
 
 .titulo_kpi {
     display: flex;
     flex-direction: column;
+    margin-top: -10%;
 }
 
 .sublinhada{
@@ -161,23 +264,24 @@ section {
     text-align: center;
     margin-top: -8%;
     font-size: 0.8em;
+    color: white;
 }
 
 .kpi img{
-    width: 7vw;
-    height: 14vh;
+    width: 5.5vw;
+    height: 10vh;
 }
 
 .kpi2 img{
-    width: 7vw;
-    height: 14vh;
+    width: 5.5vw;
+    height: 10vh;
 }
 
 .resultado{
-    width: 12vw;
-    height: 10vh;
+    width: 7vw;
+    height: 7vh;
     background-color: #8BABF7;
-    font-size: 2.5em;
+    font-size: 2.2em;
     display: flex;
     justify-content: center;
     align-items: center;
