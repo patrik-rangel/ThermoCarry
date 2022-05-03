@@ -41,10 +41,10 @@
             </div>
             <div class="info">
                 <div class="texto">
-                    E-mail: <input type="text" id="i_email" placeholder="Insira seu e-mail" style="height: 20px "> <br> <br>
+                    E-mail: <input type="email" id="i_email" placeholder="Insira seu e-mail" style="height: 20px "> <br> <br>
                     Senha: <input type="password" id="i_senha" placeholder="Insira sua senha" style="height: 20px"> <br> <br>
                     <div class="ancora"> <a href="#">Esqueceu a senha?</a> <br>
-                        Não tem Cadastro? <a href="#"> cliquei aqui</a> <br> </div>
+                        Não tem Cadastro? <a href="../Cadastro/cadastro.html"> cliquei aqui</a> <br> </div>
                     <button class="botao" onclick="entrar()">Entrar</button>
                 </div>
             </div>
@@ -95,15 +95,32 @@
         var senha = i_senha.value
 
         if (email == "") {
-            alert('Insira seu Email')
-        }
+            alert('Insira seu Email')   
+        }    
 
         if (senha == "") {
-            alert('Insira sua Senha')
+            alert('Insira sua Senha') 
+        }  
+            
+        if (email == "fernando.brandao@sptech.school" && senha == "urubu100") {
+            alert('Bem-vindo Fernando Brandão')
+            window.location.href = '../paginas-usuario/pagina-notificacao/notificacoes.html'
+        }
+               
+        if (email == "rafael.rodrigues@sptech.school" && senha == "urubu100") {
+            alert('Bem-vindo Rafael Rodrigues')
+            window.location.href = '../paginas-usuario/pagina-notificacao/notificacoes.html'
         }
 
-        if(email == 'a' && senha == 'b')
+        if (email == 'a' && senha == 'b') {
         window.location.href = '../paginas-usuario/pagina-notificacao/notificacoes.html'
-
+        }
+        
     }
+
 </script>
+
+
+
+
+

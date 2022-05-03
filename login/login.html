@@ -32,24 +32,24 @@
         </div>
 
         <div class="card2">
-        
 
 
-        <div class="borda">
-            <div class="card1">
-                <img src="img-site/vacinalogin2.jpg" style="height: 320px; width: 500px;">
-            </div>
-            <div class="info">
-                <div class="texto">
-                    Email <input type="text" id="i_email" placeholder="Email" style="height: 20px "> <br> <br>
-                    Senha <input type="password" id="i_senha" placeholder="Senha" style="height: 20px"> <br> <br>
-                    <div class="ancora"> <a href="#">Esqueceu a senha?</a> <br>
-                        Não tem Cadastro? <a href="#"> cliquei aqui</a> <br> </div>
-                    <button class="botao" onclick="entrar()">Entrar</button>
+
+            <div class="borda">
+                <div class="card1">
+                    <img src="img-site/vacinalogin2.jpg" style="height: 320px; width: 500px;">
+                </div>
+                <div class="info">
+                    <div class="texto">
+                        Email <input type="text" id="i_email" placeholder="Email" style="height: 20px "> <br> <br>
+                        Senha <input type="password" id="i_senha" placeholder="Senha" style="height: 20px"> <br> <br>
+                        <div class="ancora"> <a href="#">Esqueceu a senha?</a> <br>
+                            Não tem Cadastro? <a href="#"> cliquei aqui</a> <br> </div>
+                        <button class="botao" onclick="entrar()">Entrar</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </main>
 
     <footer>
@@ -96,11 +96,16 @@
 
         if (email == "") {
             alert('Insira seu Email')
+            if (senha == "") {
+                alert('Insira sua Senha') 
+            }
         }
 
-        if (senha == "") {
-            alert('Insira sua Senha')
-        }
-
+        if (email == "fernando.brandao@sptech.school" && senha == "urubu100") {
+            alert('Parabéns Cadastro Concluido')
+                if (email == "rafael.rodrigues@sptech.school" && senha == "urubu100") {
+                    alert('Parabéns Cadastro Concluido')
+                    }
+                }
     }
 </script>

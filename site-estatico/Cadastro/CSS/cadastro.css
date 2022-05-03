@@ -68,7 +68,7 @@ header .container{
 }
 
 main {
-    height: 120vh;
+    height: 130vh;
     background-color: linear-gradient(to bottom, #61CBED, #e4e5e6 80%);
     display: flex;
     flex-direction: column;
