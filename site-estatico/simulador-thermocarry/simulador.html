@@ -12,17 +12,17 @@
 
 <body>
     <header>
-            <div class="container">
-                <div class="logo">
-                    <img src="img-site/logo_thermo-carry-2-escrita.png" alt="">
-                </div>
-                <ul class="navbar">
-                    <li><a href="../home/TelaHome.html">Home</a></li>
-                    <li><a href="../login/login.html">Login</a></li>
-                    <li><a href="../Cadastro/cadastro.html">Cadastro</a></li>
-                    <li><a href="simulador.html">Simulador </a></li>
-                </ul>
+        <div class="container">
+            <div class="logo">
+                <img src="img-site/logo_thermo-carry-2-escrita.png" alt="">
             </div>
+            <ul class="navbar">
+                <li><a href="../home/TelaHome.html">Home</a></li>
+                <li><a href="../login/login.html">Login</a></li>
+                <li><a href="../Cadastro/cadastro.html">Cadastro</a></li>
+                <li><a href="simulador.html">Simulador </a></li>
+            </ul>
+        </div>
     </header>
 
     <h1 id="titulo-simulador">Simulador Financeiro</h1>
@@ -46,17 +46,17 @@
                 <input id="in_quantidade" type="number"><br><br>
 
                 <h5 id="sub-titulos-simulator">Taxa média de desperdício por viagem:<br>
-                (Em porcentagem)</h5>
+                    (Em porcentagem)</h5>
                 <input id="in_taxa" type="number"><br><br>
 
                 <h5 id="sub-titulos-simulator">Média de viagens por dia:</h5>
                 <input id="in_viagens" type="number"><br><br>
 
                 <button onclick="desperdício()" id="btn-simulator">Simular</button><br><br><br><br>
-            
+
 
                 <div id="div_resultado"></div>
- 
+
             </div>
         </div>
         <!--Fim da caixa 1 do simulador-->
@@ -78,12 +78,12 @@
                 <img src="img-site/logo_thermo-carry-2.png" alt="">
                 <!-- <p>© 2022 ThermoCarry • Todos os direitos reservados •</p> DESISTO DE DEIXAR ESSA PORRA NO MEIO-->
             </div>
-           <div class="redes_socias">
+            <div class="redes_socias">
                 <p class="titulos_footer">Redes Socias</p>
                 <div class="barra"></div>
                 <a href="#">Facebook</a>
                 <a href="#">Instagram</a>
-            </div> 
+            </div>
             <div class="nossos_conteudos">
                 <p class="titulos_footer">Nossos conteudos</p>
                 <div class="barra"></div>
@@ -120,33 +120,33 @@
         // } 
 
         if (vacina == "" || vacina == null, quantidade == "" || quantidade == null, taxa == "" || taxa == null, viagem == "" || viagem == null) {
-            alert ('Por favor, preencha TODOS os campos!')
+            alert('Por favor, preencha TODOS os campos!')
         }
 
         if (viagem <= 0) {
-                alert ('Valor do campo "Quantas vacinas serão transportadas por viagem" inválido!!! Insira um valor maior que 0!')
-            }
+            alert('Valor do campo "Quantas vacinas serão transportadas por viagem" inválido!!! Insira um valor maior que 0!')
+        }
 
         if (taxa < 0 || taxa > 100) {
-                alert ('Valor do campo "Taxa média de desperdício por viagem" inválido!!! Insira um valor de 0 a 100!')
-            }
+            alert('Valor do campo "Taxa média de desperdício por viagem" inválido!!! Insira um valor de 0 a 100!')
+        }
 
         if (viagem <= 0) {
-                alert ('Valor do campo "Média de viagens por dia" inválido!!! Insira um valor maior que 0!')
-            }
-        
+            alert('Valor do campo "Média de viagens por dia" inválido!!! Insira um valor maior que 0!')
+        }
+
         else {
-         
-        div_resultado.innerHTML = `• O custo da vacina escolhida é de R$${vacina}. Transportando ${quantidade} unidades por viagem 
-        chegamos no valor bruto de <b>R$${(vacina * quantidade).toFixed(2)}</b>.<br><br>
+            div_resultado.innerHTML = `• O custo da vacina escolhida é de R$${vacina}. Transportando ${quantidade} unidades por viagem 
+        chegamos no <u>valor bruto</u> de <b>R$${(vacina * quantidade).toFixed(2)}</b>.<br><br>
 
         • Descontando uma taxa média de desperdício de ${taxa}% 
-        do valor total (R$${(vacina * quantidade).toFixed(2)}), você tem uma perda de <b>R$${((vacina * quantidade) * taxa / 100).toFixed(2)}</b>.
+        do valor total incluindo a quantidade de viagens a serem feitas (R$${((vacina * quantidade)*viagem).toFixed(2)}), seu <u>lucro máximo</u> é de <b>R$${(((vacina * quantidade)*viagem) - (((vacina * quantidade) * viagem) * taxa / 100)).toFixed(2)}</b>.
         <br><br>
 
-        • Com a nossa solução, a taxa de ${taxa}% cai para em média ${taxa / 2}% se vigiadas corretamente, resultando no valor líquido 
-        de <b>R$${(((vacina * quantidade) * viagem) - (((vacina * quantidade) * (taxa / 2) / 100) * viagem)).toFixed(2)}</b>`
-         }
+        • Com a nossa solução, a taxa de ${taxa}% cai para em média ${taxa / 2}% se vigiadas corretamente, resultando no <u>valor líquido</u> 
+        de <b>R$${(((vacina * quantidade) * viagem) - (((vacina * quantidade) * (taxa / 2) / 100) * viagem)).toFixed(2)}</b> <br> <br>
+        `
+        }
     }
 
 </script>
