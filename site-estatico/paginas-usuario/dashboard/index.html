@@ -31,25 +31,68 @@
             <div class="container_conteudo">
                 <div class="grafico">
                     <h1>Caminhão 1</h1>
-                    <div class="metricas">
-                        <div class="dados_metricas" id="critico_e"><p class="p_critico">Critico</p></div>
-                        <div class="dados_metricas" id="emergencia_e"><p class="p_emergencia">Emergencia</p></div>
-                        <div class="dados_metricas" id="alerta_e"><p class="p_alerta">Alerta</p></div>
-                        <div class="dados_metricas" id="ideal_e"><p class="p_ideal">Ideal</p></div>
-                        <div class="dados_metricas" id="alerta_d"><p class="p_alerta">Alerta</p></div>
-                        <div class="dados_metricas" id="emergencia_d"><p class="p_emergencia">Emergencia</p></div>
-                        <div class="dados_metricas" id="critico_d"><p class="p_critico">Critico</p></div>
+                    <div class="metricas"> <!-- DADOS DA VACINA CORONAVAC -->
+                        <div class="dados_metricas" id="critico_e">
+                            <p class="p_critico">Critico</p>
+                            <div class="resultado_metricas">
+                                <p>-3°</p>
+                            </div>
+                        </div>
+                        <div class="dados_metricas" id="emergencia_e">
+                            <p class="p_emergencia">Emergencia</p>
+                            <div class="resultado_metricas">
+                                <p>-1°</p>
+                            </div>
+                        </div>
+                        <div class="dados_metricas" id="alerta_e">
+                            <p class="p_alerta">Alerta</p>
+                            <div class="resultado_metricas">
+                                <p>1°</p>
+                            </div>
+                        </div>
+                        <div class="dados_metricas" id="ideal_e">
+                            <p class="p_ideal">Ideal</p>
+                            <div class="pai_resultado_ideal">
+                                <div class="resultado_metricas" id="resultado_ideal1">
+                                    <p>2°</p>
+                                </div>
+                                <div class="resultado_metricas" id="resultado_ideal2">
+                                    <p>8°</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dados_metricas" id="alerta_d">
+                            <p class="p_alerta">Alerta</p>
+                            <div class="resultado_metricas">
+                                <p>9°</p>
+                            </div>
+                        </div>
+                        <div class="dados_metricas" id="emergencia_d">
+                            <p class="p_emergencia">Emergencia</p>
+                            <div class="resultado_metricas">
+                                <p>11°</p>
+                            </div>
+                        </div>
+                        <div class="dados_metricas" id="critico_d">
+                            <p class="p_critico">Critico</p>
+                            <div class="resultado_metricas">
+                                <p>13°</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="info">
                         <h3>Informações do Caminhão</h3>
                         <div class="info_dados">
-                            <p>Condutor: <span id="sublinhada" class="sublinhada">José Silva</span></p> 
+                            <p>Condutor: <span id="sublinhada" class="sublinhada">José Silva</span></p>
                             <p>Placa: <span class="sublinhada">ABC1D23</span></p>
                         </div>
                     </div>
-                    <section style="width: 100%;">
+                    <!--                     <section style="width: 100%;">
                         <canvas id="lm35Temperatura"></canvas>
-                    </section>
+                    </section> -->
+                    <div class="grafico_p">
+                        <canvas id="myChart" style="position: relative; height:40vh; width:80vw"></canvas>
+                    </div>
                 </div>
                 <div class="box_kpi">
                     <div class="kpi">
@@ -75,12 +118,59 @@
 
                     </div>
                 </div>
+</body>
+
+</html>
+
+<script>
+    const labels = [
+        '10:30',
+        '11:00',
+        '11:30',
+        '12:00',
+        '12:30',
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Temperatura',
+            backgroundColor: 'rgb(0, 0, 255, 0.6)',
+            borderColor: 'rgb(0, 0, 255)',
+            data: [2, 4, 4, 3, 4],
+        }]
+    };
+
+    const config = {
+        type: 'line',
+        data: data,
+        options: {
+/*             scales:{
+                yAxes: [{
+                    gridlines :{
+                        display: false,
+                        drawBorder: false
+                    }
+                }]
+            } */
+        }
+    };
+
+</script>
+<script>
+    /*     const myChart = new Chart( */
+    const ctx = document.getElementById('myChart').getContext("2d")
+    const myChart = new Chart(ctx, config)
+/*       config
+                ); */
+</script>
 
 
 
 
 
-                <script>
+
+<!--  <script>
                     var contextoLm35Temperatura = document.getElementById('lm35Temperatura').getContext('2d');
                     contextoLm35Temperatura.canvas.width = 1000;
                     contextoLm35Temperatura.canvas.height = 300;
@@ -321,7 +411,4 @@
                         obterDados(chave, 'chave');
                     }, 1000);
 
-                </script>
-</body>
-
-</html>
+                </script> -->
