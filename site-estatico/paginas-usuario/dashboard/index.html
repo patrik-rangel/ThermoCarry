@@ -123,6 +123,8 @@
 </html>
 
 <script>
+    var cor = []
+    const dataTemp = [2, 4, 4, 3, 4]
     const labels = [
         '10:30',
         '11:00',
@@ -131,13 +133,19 @@
         '12:30',
     ];
 
+    for (var i = 0; i < dataTemp.length; i++){
+        if(dataTemp[i]>2){
+            cor.push('green')
+        }
+    }
+
     const data = {
         labels: labels,
         datasets: [{
             label: 'Temperatura',
-            backgroundColor: 'rgb(0, 0, 255, 0.6)',
+            backgroundColor: 'rgb(0, 0, 255, 0.6)' , 
             borderColor: 'rgb(0, 0, 255)',
-            data: [2, 4, 4, 3, 4],
+            data: dataTemp,
         }]
     };
 

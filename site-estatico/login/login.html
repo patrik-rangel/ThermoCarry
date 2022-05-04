@@ -102,19 +102,25 @@
             alert('Insira sua Senha') 
         }  
             
-        if (email == "fernando.brandao@sptech.school" && senha == "urubu100") {
+/*         if (email == "fernando.brandao@sptech.school" && senha == "urubu100") {
             alert('Bem-vindo Fernando Brandão')
             window.location.href = '../paginas-usuario/pagina-notificacao/notificacoes.html'
-        }
+        }else{
+            alert('email ou senha estão incorretos')
+        } */
                
-        if (email == "rafael.rodrigues@sptech.school" && senha == "urubu100") {
-            alert('Bem-vindo Rafael Rodrigues')
+        if ((email == "rafael.rodrigues@sptech.school" && senha == "urubu100") || (email == "fernando.brandao@sptech.school" && senha == "urubu100") || (email == 'adm' && senha == '1') ) {
+            /* alert('Bem-vindo Rafael Rodrigues') */
             window.location.href = '../paginas-usuario/pagina-notificacao/notificacoes.html'
+        }else{
+            alert('email ou senha estão incorretos')
         }
 
-        if (email == 'a' && senha == 'b') {
+/*         if (email == 'a' && senha == 'b') {
         window.location.href = '../paginas-usuario/pagina-notificacao/notificacoes.html'
-        }
+        }else{
+            alert('email ou senha estão incorretos')
+        } */
         
     }
 
