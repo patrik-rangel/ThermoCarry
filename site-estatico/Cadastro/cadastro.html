@@ -33,13 +33,15 @@
                     <img src="./img-site/vacina.png" class="img">
                 <div class="card">
                         
-                        <h3>Empresa:</h3> <input type="text" placeholder="Insira o nome da empresa">
+                        <h3>Empresa:</h3> <input type="text" placeholder="Insira o nome da empresa" id="in_empresa">
                         
-                        <h3>CNPJ:</h3> <input type="number" placeholder="Insira o CNPJ da empresa">
+                        <h3>CNPJ:</h3> <input type="number" placeholder="Insira o CNPJ da empresa" id="in_cnpj" maxlength="12">
                         
-                        <h3>Nome do representante:</h3> <input type="text" placeholder="Nome do representante">
+                        <h3>Nome do representante:</h3> <input type="text" placeholder="Nome do representante" id="in_repre">
+
+                        <h3>Senha:</h3> <input type="text" placeholder="Senha" id="in_senha" maxlength="15">
                         <br><br>
-                        <button class="btn">Cadastrar</button>
+                        <button class="btn" onclick="cadastrar()">Cadastrar</button>
                 </div>
             </div>
         </div>    
@@ -79,3 +81,28 @@
     </footer>
 </body>
 </html>
+
+<script>
+    function cadastrar(){
+        var empresa = in_empresa.value
+        var cnpj = in_cnpj.value
+        var repre = in_repre.value
+        var senha = in_senha.value
+
+        if (empresa == ""){
+            alert("Preencha o campo com o nome da empresa.")
+            
+            if (cnpj == ""){
+                alert("Preencha o campo com o CNPJ da empresa.")
+            }
+            
+            if (repre == ""){
+                alert("Preencha o campo com o nome do representante.")
+            }
+            
+            if (senha == ""){
+                alert("Preencha o campo com uma senha.")
+            }
+        }
+    }
+</script>
