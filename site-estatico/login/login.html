@@ -41,7 +41,7 @@
             </div>
             <div class="info">
                 <div class="texto">
-                    E-mail: <input type="email" id="i_email" placeholder="Insira seu e-mail" style="height: 20px "> <br> <br>
+                    Nome da empresa: <input type="text" id="i_nome" placeholder="Insira o nome da sua empresa" style="height: 20px "> <br> <br>
                     Senha: <input type="password" id="i_senha" placeholder="Insira sua senha" style="height: 20px"> <br> <br>
                     <div class="ancora"> <a href="#">Esqueceu a senha?</a> <br>
                         Não tem Cadastro? <a href="../Cadastro/cadastro.html"> cliquei aqui</a> <br> </div>
@@ -91,11 +91,11 @@
 
 <script>
     function entrar() {
-        var email = i_email.value
+        var nome = i_nome.value
         var senha = i_senha.value
 
-        if (email == "") {
-            alert('Insira seu Email')   
+        if (nome == "") {
+            alert('Insira o nome da sua empresa')   
         }    
 
         if (senha == "") {
@@ -109,11 +109,11 @@
             alert('email ou senha estão incorretos')
         } */
                
-        if ((email == "rafael.rodrigues@sptech.school" && senha == "urubu100") || (email == "fernando.brandao@sptech.school" && senha == "urubu100") || (email == 'adm' && senha == '1') ) {
+        if ((nome == "instituto butantan" && senha == "coronavac") || (nome == "oxford" && senha == "astrazeneca") || (nome == 'adm' && senha == '1') ) {
             /* alert('Bem-vindo Rafael Rodrigues') */
             window.location.href = '../paginas-usuario/pagina-notificacao/notificacoes.html'
         }else{
-            alert('email ou senha estão incorretos')
+            alert('nome da empresa ou senha estão incorretos')
         }
 
 /*         if (email == 'a' && senha == 'b') {
