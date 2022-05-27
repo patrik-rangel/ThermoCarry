@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../public/assets/img-site/logo_thermo-carry-2.png" type="image/x-icon" />
+    <title>Chamados</title>
+    <link rel="stylesheet" href="../public/css/chamado-style.css">
+</head>
+
+<body>
+
+    <div class="conteudo">
+        <div class="lateral">
+            <img src=".//assets/img-site/logo_thermo-carry-2.png" alt="">
+            <div class="navbar">
+                <span><a href="notificacoes.html">Notificação</a></span>
+                <span><a href="chamado.html">Chamado</a></span>
+                <span><a href="../public/dashboard/index.html">Dashboard</a></span>
+                <span id="sair"><a href="TelaHome.html">Sair</a></span>
+            </div>
+        </div>
+
+
+        <div class="caixas">
+            <h1 class="titulo-chamado">Chamados</h1>
+
+            <h2 class="abrir-chamado">
+                Abra aqui um chamado e resolva da maneira mais rápido possível,
+                detalhando a situação. <br>
+                Se necessário, diga também como gostaria que o problema fosse resolvido
+                e possíveis observações.</h2>
+
+            <button class="botao-chamado" onclick="abrir()">Abrir um Chamado</button>
+
+            <div id=div_chamado style="display:none">
+
+                <select id="sel_chamado">
+                    <option value="" hidden>Selecione o tipo de problema</option>
+                    <option value="caminhão">Caminhão</option>
+                    <option value="lote">Lote</option>
+                    <option value="percurso">Percurso</option>
+                    <option value="motorista">Motorista</option>
+                    <option value="outro">Outro</option>
+                </select> <br>
+
+                <textarea id="ta_chamado" cols="30" rows="5" placeholder="Digite aqui seu chamado"></textarea> <br>
+                <button id="botao-enviar" onclick="enviar()">Enviar</button>
+            </div>
+
+
+
+        </div>
+
+    </div>
+</body>
+<footer>
+    <p class="conteudo_footer">© 2022 ThermoCarry • Todos os direitos reservados •</p>
+</footer>
+
+</html>
+
+<script>
+    function abrir() {
+
+        div_chamado.style.display = 'block'
+    }
+
+    function enviar() {
+        var chamado = ta_chamado.value
+
+        if (chamado == "" || sel_chamado.value == "") {
+            alert('Por favor, faça o seu chamado antes de enviá-lo.')
+        } else {
+
+            window.location.href = 'confirmacao.html'
+            /*  alert ('Seu chamado foi enviado com sucesso! Aguarde sua resposta.') */
+            ta_chamado.value = " "
+            sel_chamado.value = ""
+            div_chamado.style.display = 'none'
+        }
+    }
+</script>

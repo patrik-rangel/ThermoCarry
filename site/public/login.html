@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../public/css/login.css">
+    <link rel="shortcut icon" href="../public/assets/img-site/logo_thermo-carry-2.png" type="image/x-icon"/>
+    <title>ThermoCarry - Login</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../public/assets/img-site/logo_thermo-carry-2-escrita.png" alt="">
+            </div>
+            <ul class="navbar">
+                <li><a href="TelaHome.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="simulador.html">Simulador </a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Colocar todo conteudo do "meio" do site aqui dentro -->
+
+        <div class="titulo" style="text-decoration: none;">
+            <img id="imagem" src="../public/assets/img-site/usuariologin1.png" style="height: 50px;">
+            <b>Login</b>
+        </div>
+
+        <div class="card2">
+        
+
+
+        <div class="borda">
+            <div class="card1">
+                <img src="../public/assets/img-site/vacinalogin2.jpg" style="height: 320px; width: 500px;">
+            </div>
+            <div class="info">
+                <div class="texto">
+                    Nome: <input type="text" id="i_nome" placeholder="Insira o seu nome" style="height: 20px "> <br> <br>
+                    Senha: <input type="password" id="i_senha" placeholder="Insira sua senha" style="height: 20px"> <br> <br>
+                    <div class="ancora"> <a href="#">Esqueceu a senha?</a> <br>
+                        Não tem Cadastro? <a href="../Cadastro/cadastro.html"> cliquei aqui</a> <br> </div>
+                    <button class="botao" onclick="entrar()">Entrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+
+    <footer>
+        <div class="conteudo_footer">
+            <div class="fale_conosco">
+                <p class="titulos_footer">Fale conosco</p>
+                <div class="barra"></div>
+                <a href="mailto:patrik.souza@sptech.school">atendimento@thermocarry</a>
+                <!-- Substituir esse email depois -->
+            </div>
+            <div class="sac">
+                <p class="titulos_footer">Sac</p>
+                <div class="barra"></div>
+                <a href="tel:+5511983326043">(xx)xxxx-xxxx</a>
+            </div> <!-- Substituir o numero depois -->
+            <div class="logo_footer">
+                <img src="../public/assets/img-site/logo_thermo-carry-2.png" alt="">
+                <p>© 2022 ThermoCarry • Todos os direitos reservados •</p>
+            </div>
+            <div class="redes_socias">
+                <p class="titulos_footer">Redes Socias</p>
+                <div class="barra"></div>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+            </div>
+            <div class="nossos_conteudos">
+                <p class="titulos_footer">Nossos conteudos</p>
+                <div class="barra"></div>
+                <a href="#">Home</a>
+                <a href="#">Cadastro</a>
+                <a href="#">Login</a>
+                <a href="">Simulador financeiro</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<script>
+    function entrar() {
+        aguardar();
+
+        var nomeVar = i_nome.value;
+        var senhaVar = senha_input.value;
+
+        if (nomeVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", nomeVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nomeServer: nomeVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "notificacoes.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
+
+
+
+
+
+
