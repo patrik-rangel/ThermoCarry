@@ -53,8 +53,8 @@ const serial = async (
 
         if (HABILITAR_OPERACAO_INSERIR) {
             await poolBancoDados.execute(
-                'INSERT INTO LeituraSensor (dados) VALUES (?)',
-                [ dht11Umidade, dht11Temperatura, luminosidade,  lm35Temperatura,  chave ]
+                'INSERT INTO medidas (dht11_umidade, dht11_temperatura, luminosidade, lm35_temperatura, chave, momento, fk_transporte) VALUES ( ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, 1)',
+                [dht11Umidade, dht11Temperatura, luminosidade, lm35Temperatura, chave]
             );
         }
 

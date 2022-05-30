@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../public/css/login.css">
-    <link rel="shortcut icon" href="../public/assets/img-site/logo_thermo-carry-2.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="shortcut icon" href="assets/img-site/logo_thermo-carry-2.png" type="image/x-icon"/>
     <title>ThermoCarry - Login</title>
 </head>
 
@@ -12,7 +12,7 @@
     <header>
         <div class="container">
             <div class="logo">
-                <img src="../public/assets/img-site/logo_thermo-carry-2-escrita.png" alt="">
+                <img src="assets/img-site/logo_thermo-carry-2-escrita.png" alt="">
             </div>
             <ul class="navbar">
                 <li><a href="TelaHome.html">Home</a></li>
@@ -27,7 +27,7 @@
         <!-- Colocar todo conteudo do "meio" do site aqui dentro -->
 
         <div class="titulo" style="text-decoration: none;">
-            <img id="imagem" src="../public/assets/img-site/usuariologin1.png" style="height: 50px;">
+            <img id="imagem" src="assets/img-site/usuariologin1.png" style="height: 50px;">
             <b>Login</b>
         </div>
 
@@ -37,7 +37,7 @@
 
         <div class="borda">
             <div class="card1">
-                <img src="../public/assets/img-site/vacinalogin2.jpg" style="height: 320px; width: 500px;">
+                <img src="assets/img-site/vacinalogin2.jpg" style="height: 320px; width: 500px;">
             </div>
             <div class="info">
                 <div class="texto">
@@ -66,7 +66,7 @@
                 <a href="tel:+5511983326043">(xx)xxxx-xxxx</a>
             </div> <!-- Substituir o numero depois -->
             <div class="logo_footer">
-                <img src="../public/assets/img-site/logo_thermo-carry-2.png" alt="">
+                <img src="assets/img-site/logo_thermo-carry-2.png" alt="">
                 <p>© 2022 ThermoCarry • Todos os direitos reservados •</p>
             </div>
             <div class="redes_socias">
@@ -91,19 +91,19 @@
 
 <script>
     function entrar() {
-        aguardar();
+        /* aguardar(); */
 
         var nomeVar = i_nome.value;
-        var senhaVar = senha_input.value;
+        var senhaVar = i_senha.value;
 
         if (nomeVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            finalizarAguardar();
+            /* finalizarAguardar(); */
             return false;
         }
         else {
-            setInterval(sumirMensagem, 5000)
+            /* setInterval(sumirMensagem, 5000) */
         }
 
         console.log("FORM LOGIN: ", nomeVar);
@@ -144,7 +144,7 @@
 
                 resposta.text().then(texto => {
                     console.error(texto);
-                    finalizarAguardar(texto);
+                    /* finalizarAguardar(texto); */
                 });
             }
 
@@ -155,9 +155,9 @@
         return false;
     }
 
-    function sumirMensagem() {
+/*     function sumirMensagem() {
         cardErro.style.display = "none"
-    }
+    } */
 
 </script>
 

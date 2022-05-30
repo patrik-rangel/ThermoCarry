@@ -2,15 +2,15 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../public/css/cadastro.css">
-    <link rel="shortcut icon" href="../public/assets/img-site/logo_thermo-carry-2.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="shortcut icon" href="assets/img-site/logo_thermo-carry-2.png" type="image/x-icon" />
     <title>ThermoCarry - Cadastro</title>
 </head>
 <body>
     <header>
         <div class="container">
             <div class="logo">
-                <img src="../public/assets/img-site/logo_thermo-carry-2-escrita.png" alt="">
+                <img src="assets/img-site/logo_thermo-carry-2-escrita.png" alt="">
             </div>
             <ul class="navbar">
                 <li><a href="TelaHome.html">Home</a></li>
@@ -59,7 +59,7 @@
                 <a href="tel:+5511983326043">(xx)xxxx-xxxx</a>
             </div> <!-- Substituir o numero depois -->
             <div class="logo_footer">
-                <img src="../public/assets/img-site/logo_thermo-carry-2.png" alt="">
+                <img src="assets/img-site/logo_thermo-carry-2.png" alt="">
                 <p>© 2022 ThermoCarry • Todos os direitos reservados •</p>
             </div>
            <div class="redes_socias">
@@ -83,7 +83,7 @@
 
 <script>
     function cadastrar() {
-        aguardar();
+        /* aguardar(); */
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
@@ -94,9 +94,9 @@
 
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            alert ('Mensagem de erro para todos os campos em branco');
 
-            finalizarAguardar();
+            /* finalizarAguardar(); */
             return false;
         }
         else {
@@ -121,29 +121,29 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                cardErro.style.display = "block";
+/*                 cardErro.style.display = "block"; */
 
-                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                alert ("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
 
                 setTimeout(() => {
                     window.location = "login.html";
                 }, "2000")
                 
                 limparFormulario();
-                finalizarAguardar();
+                /* finalizarAguardar(); */
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
+            /* finalizarAguardar(); */
         });
 
         return false;
     }
 
     function sumirMensagem() {
-        cardErro.style.display = "none"
+/*         cardErro.style.display = "none" */
     }
 
 </script>
