@@ -14,10 +14,8 @@ function buscarUltimasMedidas(idAquario, limite_linhas) {
                     where fk_aquario = ${idAquario}
                     order by id desc`;
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select 
-        (lm35_temperatura)
-                    from medidas
-                    order by id desc limit ${limite_linhas};`;
+        instrucaoSql = 
+                    `select lm35_temperatura, date_format(momento, '%H:%i:%s')as momento_grafico from medidas order by id desc limit ${limite_linhas};`
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return
@@ -42,10 +40,11 @@ function buscarMedidasEmTempoReal(idAquario) {
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         instrucaoSql =
-                    `select 
-        (lm35_temperatura)
+/*         `select 
+        lm35_temperatura, momento as momento_grafico
                     from medidas
-                    order by id desc limit 1`;
+                    order by id desc limit 1;`; */
+                    `select lm35_temperatura, date_format(momento, '%H:%i:%s')as momento_grafico from medidas order by id desc limit 1;`
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return

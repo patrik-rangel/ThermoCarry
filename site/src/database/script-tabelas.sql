@@ -81,3 +81,25 @@ create table usuario (
   email varchar(50),
   senha varchar(20),
   nomeUsuario varchar(50));
+
+
+/* Script ThermoCarry */
+create database thermocarry;
+use thermocarry;
+
+create table medidas (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	dht11_umidade DECIMAL,
+	dht11_temperatura DECIMAL,
+	luminosidade DECIMAL,
+	lm35_temperatura DECIMAL,
+	chave TINYINT,
+	momento DATETIME,
+	fk_transporte INT
+);
+
+create table usuario (
+  idUsuario int primary key auto_increment,
+  email varchar(50),
+  senha varchar(20),
+  nomeUsuario varchar(50));
