@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/cadastro.css">
     <link rel="shortcut icon" href="assets/img-site/logo_thermo-carry-2.png" type="image/x-icon" />
     <title>ThermoCarry - Cadastro</title>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -13,7 +15,7 @@
                 <img src="assets/img-site/logo_thermo-carry-2-escrita.png" alt="">
             </div>
             <ul class="navbar">
-                <li><a href="TelaHome.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="login.html">Login</a></li>
                 <li><a href="cadastro.html">Cadastro</a></li>
                 <li><a href="simulador.html">Simulador </a></li>
@@ -24,34 +26,36 @@
 
         <div class="titulo" style="text-decoration: none;">
             <img id="imagem" src=".//assets/img-site/usuariologin1.png" style="height: 50px;">
-            <b>cadastro</b>
+            <b>Cadastro</b>
         </div>
 
 
         <div class="borda">
             <div class="container">
-                    <img src=".//assets/img-site/vacina.png" class="img">
-                <div class="card">
-                        <h3>Nome do representante:</h3> <input type="text" placeholder="Nome do representante" id="in_repre">
+                <img src=".//assets/img-site/vacina.png" class="img">
+                <div class="card" id="div_card">
+                    <h3>CNPJ:</h3> <input type="text" placeholder="CNPJ da Empresa" maxlength="14" id="inp_cnpj">
 
-                        <h3>E-mail:</h3> <input type="text" placeholder="E-mail" id="in_email">
+                    <h3>Nome da Empresa:</h3> <input type="text" placeholder="Nome da Empresa" id="inp_empresa">
 
-                        <h3>Senha:</h3> <input type="text" placeholder="Senha" id="in_senha" maxlength="15">
+                    <h3>CEP:</h3> <input type="text" placeholder="CEP da Empresa" id="inp_cep" maxlength="9">
 
-                        <h3>Confirmar senha:</h3> <input type="text" placeholder="confirmar senha" id="in_confirmar_senha">
-                        <br><br>
-                        <button class="btn" onclick="cadastrar()">Cadastrar</button>
+                    <br>
+                    <button class="btn" onclick="cadastrar_empresa()">Cadastrar</button>
+                    <h5 onclick="cadastrar_usuario() " style="text-align: center;"> <u style="color: blue ;">Sua Empresa
+                            já tem cadastro? Clique aqui para cadastrar um novo usuário!</u></h5>
                 </div>
             </div>
-        </div>    
+        </div>
     </main>
-    
+
     <footer>
         <div class="conteudo_footer">
             <div class="fale_conosco">
                 <p class="titulos_footer">Fale conosco</p>
                 <div class="barra"></div>
-                <a href="mailto:patrik.souza@sptech.school">atendimento@thermocarry</a> <!-- Substituir esse email depois -->
+                <a href="mailto:patrik.souza@sptech.school">atendimento@thermocarry</a>
+                <!-- Substituir esse email depois -->
             </div>
             <div class="sac">
                 <p class="titulos_footer">Sac</p>
@@ -62,12 +66,12 @@
                 <img src="assets/img-site/logo_thermo-carry-2.png" alt="">
                 <p>© 2022 ThermoCarry • Todos os direitos reservados •</p>
             </div>
-           <div class="redes_socias">
+            <div class="redes_socias">
                 <p class="titulos_footer">Redes Socias</p>
                 <div class="barra"></div>
                 <a href="#">Facebook</a>
                 <a href="#">Instagram</a>
-            </div> 
+            </div>
             <div class="nossos_conteudos">
                 <p class="titulos_footer">Nossos conteudos</p>
                 <div class="barra"></div>
@@ -79,22 +83,23 @@
         </div>
     </footer>
 </body>
+
 </html>
 
 <script>
-    function cadastrar() {
+    function cadastrar_empresa() {
         /* aguardar(); */
-
+console.log("entrei aqui")
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
-        var nomeVar = in_repre.value;
-        var emailVar = in_email.value;
-        var senhaVar = in_senha.value;
-        var confirmacaoSenhaVar = in_confirmar_senha.value;
+        var cnpjVar = inp_cnpj.value;
+        var empresaVar = inp_empresa.value;
+        var cepVar = inp_cep.value;
+        
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
-            cardErro.style.display = "block"
-            alert ('Mensagem de erro para todos os campos em branco');
+        if (cnpjVar == "" || empresaVar == "" || cepVar == "" ) {
+            //cardErro.style.display = "block"
+            alert('Preencha os campos em branco!');
 
             /* finalizarAguardar(); */
             return false;
@@ -102,9 +107,9 @@
         else {
             setInterval(sumirMensagem, 5000)
         }
-
+console.log("Iniciando o fetch")
         // Enviando o valor da nova input
-        fetch("/usuarios/cadastrar", {
+        fetch("/usuarios/cadastrar_empresa", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -112,23 +117,29 @@
             body: JSON.stringify({
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/usuario.js
-                nomeServer: nomeVar,
-                emailServer: emailVar,
-                senhaServer: senhaVar
+                cnpjServer: cnpjVar,
+                empresaServer: empresaVar,
+                cepServer: cepVar,
             })
         }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-/*                 cardErro.style.display = "block"; */
+                /*                 cardErro.style.display = "block"; */
+console.log("Passei pelo fetch")
+                alert("Cadastro realizado com sucesso! Agora cadastre um novo usuário");
 
-                alert ("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
+                cadastrar_usuario();
+                /* div_card.innerHTML = `<h3>CNPJ:</h3> <input type="text" placeholder="Nome do representante" id="inp_cnpj2">
 
-                setTimeout(() => {
-                    window.location = "login.html";
-                }, "2000")
-                
+                <h3>E-mail:</h3> <input type="text" placeholder="E-mail" id="inp_email">
+
+                <h3>Senha:</h3> <input type="password" placeholder="Senha" id="inp_senha" maxlength="20">
+
+                <h3>Confirmar Senha:</h3> <input type="password" placeholder="confirmar senha" id="inp_confirmar_senha">
+                <br><br>
+                <button class="btn" onclick="cadastrar()">Cadastrar</button>` */ 
                 limparFormulario();
                 /* finalizarAguardar(); */
             } else {
@@ -143,7 +154,82 @@
     }
 
     function sumirMensagem() {
-/*         cardErro.style.display = "none" */
+        /*         cardErro.style.display = "none" */
     }
+    function cadastrar_usuario() {
+        div_card.innerHTML = `<h3>CNPJ:</h3> <input type="text" maxlength="14" placeholder="CNPJ da Empresa que trabalha" id="inp_cnpj2">
 
+        <h3>E-mail:</h3> <input type="text" placeholder="E-mail" id="inp_email">
+
+        <h3>Senha:</h3> <input type="password" placeholder="Senha" id="inp_senha" maxlength="15">
+
+        <h3>Confirmar Senha:</h3> <input type="password" placeholder="confirmar senha" id="inp_confirmar_senha">
+        <br><br>
+        <button class="btn" onclick="cadastroFinal()">Cadastrar</button>` 
+    }
+    function cadastroFinal() {
+        /* aguardar(); */
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var cnpj2Var = inp_cnpj2.value;
+        var emailVar = inp_email.value;
+        var senhaVar = inp_senha.value;
+        var confirmacaoSenhaVar = inp_confirmar_senha.value;
+
+        if (cnpj2Var == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" ) {
+            //cardErro.style.display = "block"
+            alert('Preencha os campos em branco!');
+
+            /* finalizarAguardar(); */
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastroFinal", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                cnpj2Server: cnpj2Var,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                /*                 cardErro.style.display = "block"; */
+
+                alert("Cadastro realizado com sucesso! Redirecionando para a tela de Login");
+                window.location.href="login.html"
+
+                /* div_card.innerHTML = `<h3>CNPJ:</h3> <input type="text" placeholder="Nome do representante" id="inp_cnpj2">
+
+                <h3>E-mail:</h3> <input type="text" placeholder="E-mail" id="inp_email">
+
+                <h3>Senha:</h3> <input type="password" placeholder="Senha" id="inp_senha" maxlength="20">
+
+                <h3>Confirmar Senha:</h3> <input type="password" placeholder="confirmar senha" id="inp_confirmar_senha">
+                <br><br>
+                <button class="btn" onclick="cadastrar()">Cadastrar</button>` */ 
+                limparFormulario();
+                /* finalizarAguardar(); */
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            /* finalizarAguardar(); */
+        });
+
+        return false;
+    }
 </script>
