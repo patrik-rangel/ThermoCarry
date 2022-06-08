@@ -4,7 +4,7 @@ var sql = require('mssql');
 // CONEXÃO DO SQL SERVER - AZURE (NUVEM)
 var sqlServerConfig = {
     server: "grupo06sis.database.windows.net",
-    database: "thermoCary",
+    database: "thermoCarry",
     user: "thermocarry",
     password: "Grupo06sis",
     pool: {
@@ -21,8 +21,8 @@ var sqlServerConfig = {
 var mySqlConfig = {
     host: "localhost",
     database: "thermocarry",
-    user: "aluno",
-    password: "sptech",
+    user: "usuario",
+    password: "urubu100",
 };
 
 function executar(instrucao) {

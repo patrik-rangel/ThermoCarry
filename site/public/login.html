@@ -41,7 +41,7 @@
             </div>
             <div class="info">
                 <div class="texto">
-                    E-mail: <input type="text" id="i_nome" placeholder="Insira o seu nome" style="height: 20px "> <br> <br>
+                    E-mail: <input type="text" id="i_email" placeholder="Insira o seu nome" style="height: 20px "> <br> <br>
                     Senha: <input type="password" id="i_senha" placeholder="Insira sua senha" style="height: 20px"> <br> <br>
                     <div class="ancora"> <a href="#">Esqueceu a senha?</a> <br>
                         Não tem Cadastro? <a href="../Cadastro/cadastro.html"> cliquei aqui</a> <br> </div>
@@ -93,10 +93,10 @@
     function entrar() {
         /* aguardar(); */
 
-        var nomeVar = i_nome.value;
+        var emailVar = i_email.value;
         var senhaVar = i_senha.value;
 
-        if (nomeVar == "" || senhaVar == "") {
+        if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
             /* finalizarAguardar(); */
@@ -106,7 +106,7 @@
             /* setInterval(sumirMensagem, 5000) */
         }
 
-        console.log("FORM LOGIN: ", nomeVar);
+        console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
 
         fetch("/usuarios/autenticar", {
@@ -115,7 +115,7 @@
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                nomeServer: nomeVar,
+                emailServer: emailVar,
                 senhaServer: senhaVar
             })
         }).then(function (resposta) {
