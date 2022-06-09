@@ -174,7 +174,7 @@ main .botao {
     border-radius: 8px;
 }
 
-#i_senha {
+#i_senha, #i_email {
     height: 30px;
     width: 200px;
     background-color: whitesmoke;

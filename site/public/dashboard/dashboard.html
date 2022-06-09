@@ -25,6 +25,17 @@
         </div>
         <div class="container">
             <div class="container_conteudo">
+                <div id="modal_container" class="modal_container">
+                    <div class="modal">
+                        <p>
+                            <button onclick="fecharTeste()" class="button02" id="fechar">
+                                X
+                            </button>
+                        <h2>!ALERTA!</h2>
+                        <h3 id="texto_alertas">Temperatura está fora do ideal</h3>
+                        </p>
+                    </div>
+                </div>
                 <div class="grafico">
                     <h1>Caminhão 1</h1>
                     <div class="metricas">
@@ -114,7 +125,6 @@
                             <img src="img-site/icone-termometro-removebg-preview.png" alt="">
                             <div class="resultado">7°</div>
                         </div>
-
                     </div>
                 </div>
 </body>
@@ -365,6 +375,11 @@
 </script> -->
 
 <script>
+
+    function fecharTeste() {
+        modal_container.style.display = 'none'
+    }
+
     let proximaAtualizacao;
 
     window.onload = obterDadosGrafico(1);
@@ -449,11 +464,24 @@
 
 
         if (registro.lm35_temperatura <= -3 || registro.lm35_temperatura >= 13) {
-            alert('situação critica')
+            modal_container.classList.remove('modal_container')
+            modal_container.classList.add('modal_critico')
+            texto_alertas.innerHTML = 'Temperatura está em estado crítico'
+            modal_container.style.display = 'flex'
+
+            /* alert('situação critica') */
         } else if (registro.lm35_temperatura <= -1 || registro.lm35_temperatura >= 11) {
-            alert('situação de emergencia')
+            modal_container.classList.remove('modal_container')
+            modal_container.classList.add('modal_emergencial')
+            texto_alertas.innerHTML = 'Temperatura está em estado de emergência'
+            modal_container.style.display = 'flex'
+            /* alert('situação de emergencia') */
         } else if (registro.lm35_temperatura <= 1 || registro.lm35_temperatura >= 9) {
-            alert('situação de alerta')
+            modal_container.classList.remove('modal_container')
+            modal_container.classList.add('modal_alerta')
+            texto_alertas.innerHTML = 'Temperatura está em estado de alerta'
+            modal_container.style.display = 'flex'
+            /* alert('situação de alerta') */
         }
 
         console.log(JSON.stringify(dados));
@@ -526,11 +554,20 @@
                     dados.datasets[0].data.push(novoRegistro[0].lm35_temperatura); // incluir uma nova medida de temperatura
 
                     if (novoRegistro[0].lm35_temperatura <= -3 || novoRegistro[0].lm35_temperatura >= 13) {
-                        alert('situação critica')
+                        modal_container.classList.remove('modal_container')
+                        modal_container.classList.add('modal_critico')
+                        texto_alertas.innerHTML = 'Temperatura está em estado crítico'
+                        modal_container.style.display = 'flex'
                     } else if (novoRegistro[0].lm35_temperatura <= -1 || novoRegistro[0].lm35_temperatura >= 11) {
-                        alert('situação de emergencia')
+                        modal_container.classList.remove('modal_container')
+                        modal_container.classList.add('modal_emergencial')
+                        texto_alertas.innerHTML = 'Temperatura está em estado de emergência'
+                        modal_container.style.display = 'flex'
                     } else if (novoRegistro[0].lm35_temperatura <= 1 || novoRegistro[0].lm35_temperatura >= 9) {
-                        alert('situação de alerta')
+                        modal_container.classList.remove('modal_container')
+                        modal_container.classList.add('modal_alerta')
+                        texto_alertas.innerHTML = 'Temperatura está em estado de alerta'
+                        modal_container.style.display = 'flex'
                     }
 
                     window.grafico_linha.update();
