@@ -52,3 +52,25 @@ function fecharModal() {
     divModal.style.display = "none";
 }
 
+
+/* Dashboard */
+
+function clearClass() {
+    let classCritico = modal_container.classList.contains('modal_critico')
+    let classEmergencial = modal_container.classList.contains('modal_emergencial')
+    let classAlerta = modal_container.classList.contains('modal_alerta')
+
+    if (classCritico = true){
+        modal_container.classList.remove('modal_critico')
+    }
+    if(classEmergencial = true){
+        modal_container.classList.remove('modal_emergencial')
+    }
+    if(classAlerta = true){
+        modal_container.classList.remove('modal_alerta')
+    }
+}
+
+let contCritico = 0
+let contEmergencia = 0
+let contAlerta = 0

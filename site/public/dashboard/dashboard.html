@@ -8,6 +8,7 @@
     <!-- <script src="http://www.chartjs.org/samples/latest/utils.js"></script> -->
     <link rel="shortcut icon" href="img-site/logo_thermo-carry-2.png" type="image/x-icon" />
     <link rel="stylesheet" href="../css/dashboard-style.css">
+    <script src="../js/funcoes.js"></script>
     <style>
     </style>
 </head>
@@ -17,10 +18,10 @@
         <div class="lateral">
             <img src="img-site/logo_thermo-carry-2.png" alt="">
             <div class="navbar">
-                <span><a href="../notificacoes.html">Notificação</a></span>
+                <!-- <span><a href="../notificacoes.html">Notificação</a></span> -->
                 <span><a href="../chamado.html">Chamado</a></span>
-                <span><a href="../public/dashboard/index.html">Dashboard</a></span>
-                <span id="sair"><a href="../TelaHome.html">Sair</a></span>
+                <span><a href="dashboard.html">Dashboard</a></span>
+                <span id="sair"><a href="../index.html">Sair</a></span>
             </div>
         </div>
         <div class="container">
@@ -31,7 +32,7 @@
                             <button onclick="fecharTeste()" class="button02" id="fechar">
                                 X
                             </button>
-                        <h2>!ALERTA!</h2>
+                        <h2 id="texto_modal"></h2>
                         <h3 id="texto_alertas">Temperatura está fora do ideal</h3>
                         </p>
                     </div>
@@ -90,10 +91,10 @@
                     </div>
                     <div class="info">
                         <h3>Informações do Caminhão</h3>
-                        <div class="info_dados">
+<!--                         <div class="info_dados">
                             <p>Condutor: <span id="sublinhada" class="sublinhada">José Silva</span></p>
                             <p>Placa: <span class="sublinhada">ABC1D23</span></p>
-                        </div>
+                        </div> -->
                     </div>
                     <!--                     <section style="width: 100%;">
                         <canvas id="lm35Temperatura"></canvas>
@@ -107,23 +108,23 @@
                 <div class="box_kpi">
                     <div class="kpi">
                         <div class="titulo_kpi">
-                            <h3>Temperatura Média</h3>
-                            <p class="sublinhada">Nos ultimos 30 minutos</p>
+                            <h3>Quantidade de avisos</h3>
+                            <p class="sublinhada">Nos ultimos 15 minutos</p>
                         </div>
                         <div class="dados_kpi">
                             <img src="img-site/icone-termometro-removebg-preview.png" alt="">
-                            <div class="resultado">5°</div>
+                            <div class="resultado" id="numero_kpi_30minutos">--°</div>
                         </div>
 
                     </div>
                     <div class="kpi2">
                         <div class="titulo_kpi">
-                            <h3>Temperatura Média</h3>
-                            <p class="sublinhada">Na ultima hora</p>
+                            <h3>Quantidade de avisos</h3>
+                            <p class="sublinhada">Nos ultimos 30 minutos</p>
                         </div>
                         <div class="dados_kpi">
                             <img src="img-site/icone-termometro-removebg-preview.png" alt="">
-                            <div class="resultado">7°</div>
+                            <div class="resultado" id="numero_kpi_1hora">--°</div>
                         </div>
                     </div>
                 </div>
@@ -376,6 +377,22 @@
 
 <script>
 
+    let cont_30minutos = 0
+    let cont_1hora = 0
+    setInterval(function () {
+        cont_30minutos = 0
+    }, 1000 * 900)
+    setInterval(function () {
+        cont_1hora = 0
+    }, 1000 * 1800)
+
+    function kpi_30min() {
+        numero_kpi_30minutos.innerHTML = `${cont_30minutos}`
+    }
+    function kpi_1hora() {
+        numero_kpi_1hora.innerHTML = `${cont_1hora}`
+    }
+
     function fecharTeste() {
         modal_container.style.display = 'none'
     }
@@ -463,24 +480,47 @@
         }
 
 
-        if (registro.lm35_temperatura <= -3 || registro.lm35_temperatura >= 13) {
-            modal_container.classList.remove('modal_container')
+        if (registro.lm35_temperatura >= 2 && registro.lm35_temperatura <= 8) {
+            modal_container.style.display = 'none'
+        }
+
+
+        else if (registro.lm35_temperatura <= -3 || registro.lm35_temperatura >= 13) {
+            /* modal_container.classList.remove('modal_container') */
+            clearClass()
             modal_container.classList.add('modal_critico')
+            texto_modal.innerHTML = 'Critico'
             texto_alertas.innerHTML = 'Temperatura está em estado crítico'
             modal_container.style.display = 'flex'
+            cont_30minutos++
+            cont_1hora ++
+            kpi_30min()
+            kpi_1hora()
 
             /* alert('situação critica') */
         } else if (registro.lm35_temperatura <= -1 || registro.lm35_temperatura >= 11) {
-            modal_container.classList.remove('modal_container')
+            /* modal_container.classList.remove('modal_container') */
+            clearClass()
             modal_container.classList.add('modal_emergencial')
+            texto_modal.innerHTML = 'Emergência'
             texto_alertas.innerHTML = 'Temperatura está em estado de emergência'
             modal_container.style.display = 'flex'
+            cont_30minutos++
+            cont_1hora ++
+            kpi_30min()
+            kpi_1hora()
             /* alert('situação de emergencia') */
         } else if (registro.lm35_temperatura <= 1 || registro.lm35_temperatura >= 9) {
-            modal_container.classList.remove('modal_container')
+            /* modal_container.classList.remove('modal_container') */
+            clearClass()
             modal_container.classList.add('modal_alerta')
+            texto_modal.innerHTML = 'Emergência'
             texto_alertas.innerHTML = 'Temperatura está em estado de alerta'
             modal_container.style.display = 'flex'
+            cont_30minutos++
+            cont_1hora ++
+            kpi_30min()
+            kpi_1hora()
             /* alert('situação de alerta') */
         }
 
@@ -507,7 +547,7 @@
                         ticks: {
                             beginAtZero: true,
                             max: 50,
-                            min: 0
+                            min: -10
                         }
                     }, /* {
                         type: 'linear',
@@ -554,32 +594,50 @@
                     dados.datasets[0].data.push(novoRegistro[0].lm35_temperatura); // incluir uma nova medida de temperatura
 
                     if (novoRegistro[0].lm35_temperatura <= -3 || novoRegistro[0].lm35_temperatura >= 13) {
-                        modal_container.classList.remove('modal_container')
+                        /* modal_container.classList.remove('modal_container') */
+                        clearClass()
                         modal_container.classList.add('modal_critico')
                         texto_alertas.innerHTML = 'Temperatura está em estado crítico'
+                        texto_modal.innerHTML = 'Critico'
                         modal_container.style.display = 'flex'
+                        cont_30minutos++
+                        cont_1hora ++
+                        kpi_30min()
+                        kpi_1hora()
                     } else if (novoRegistro[0].lm35_temperatura <= -1 || novoRegistro[0].lm35_temperatura >= 11) {
-                        modal_container.classList.remove('modal_container')
+                        /* modal_container.classList.remove('modal_container') */
+                        clearClass()
                         modal_container.classList.add('modal_emergencial')
                         texto_alertas.innerHTML = 'Temperatura está em estado de emergência'
+                        texto_modal.innerHTML = 'Emergência'
                         modal_container.style.display = 'flex'
+                        cont_30minutos++
+                        cont_1hora++
+                        kpi_30min()
+                        kpi_1hora()
                     } else if (novoRegistro[0].lm35_temperatura <= 1 || novoRegistro[0].lm35_temperatura >= 9) {
-                        modal_container.classList.remove('modal_container')
+                        /* modal_container.classList.remove('modal_container') */
+                        clearClass()
                         modal_container.classList.add('modal_alerta')
                         texto_alertas.innerHTML = 'Temperatura está em estado de alerta'
+                        texto_modal.innerHTML = 'Alerta'
                         modal_container.style.display = 'flex'
+                        cont_30minutos++
+                        cont_1hora ++
+                        kpi_30min()
+                        kpi_1hora()
                     }
 
                     window.grafico_linha.update();
 
                     // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
 
-                    proximaAtualizacao = setTimeout(() => atualizarGrafico(id, dados), 2000);
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(id, dados), 5000);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
                 // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                proximaAtualizacao = setTimeout(() => atualizarGrafico(id, dados), 2000);
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(id, dados), 5000);
             }
         })
             .catch(function (error) {

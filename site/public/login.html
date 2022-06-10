@@ -41,10 +41,10 @@
             </div>
             <div class="info">
                 <div class="texto">
-                    E-mail: <input type="text" id="i_email" placeholder="Insira o seu nome" style="height: 20px "> <br> <br>
+                    E-mail: <input type="text" id="i_email" placeholder="Insira o seu email" style="height: 20px "> <br> <br>
                     Senha: <input type="password" id="i_senha" placeholder="Insira sua senha" style="height: 20px"> <br> <br>
-                    <div class="ancora"> <a href="#">Esqueceu a senha?</a> <br>
-                        Não tem Cadastro? <a href="../Cadastro/cadastro.html"> cliquei aqui</a> <br> </div>
+                    <div class="ancora"> <a href="https://app.pipefy.com/public/form/a5PO4OnI">Esqueceu a senha?</a> <br>
+                        Não tem Cadastro? <a href="cadastro.html"> cliquei aqui</a> <br> </div>
                     <button class="botao" onclick="entrar()">Entrar</button>
                 </div>
             </div>
@@ -63,7 +63,7 @@
             <div class="sac">
                 <p class="titulos_footer">Sac</p>
                 <div class="barra"></div>
-                <a href="tel:+5511983326043">(xx)xxxx-xxxx</a>
+                <a href="tel:+5511983326043">(11)4002-8922</a>
             </div> <!-- Substituir o numero depois -->
             <div class="logo_footer">
                 <img src="assets/img-site/logo_thermo-carry-2.png" alt="">
@@ -82,6 +82,7 @@
                 <a href="#">Cadastro</a>
                 <a href="#">Login</a>
                 <a href="">Simulador financeiro</a>
+                <a href="assets/MANUAL DE INSTRUÇÃO.pdf" title="download" target="_blank">Manual de instrução</a>
             </div>
         </div>
     </footer>
@@ -133,7 +134,7 @@
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "notificacoes.html";
+                        window.location = "dashboard/dashboard.html";
                     }, 1000); // apenas para exibir o loading
 
                 });
